@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import EmotionTheme from './theme/EmotionTheme';
+import GlobalStyles from './theme/GlobalStyles';
+import { BreakpointProvider } from './hooks/useBreakpoint';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <GlobalStyles />
+
+    <EmotionTheme>
+      <BreakpointProvider>
+        <App />
+      </BreakpointProvider>
+    </EmotionTheme>
   </React.StrictMode>
 );
 
