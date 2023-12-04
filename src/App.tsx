@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Header from './components/Hero/Header';
 import Hero from './components/Hero';
-import { a, useSpring } from '@react-spring/web';
+import { a, config, useSpring } from '@react-spring/web';
 
 const AppStyled = styled(a.div)`
   animation: moveUp 0.3s ease-out forwards;
@@ -15,9 +15,9 @@ const AppStyled = styled(a.div)`
 
 function App() {
   const appSpring = useSpring({
-    config: { friction: 50 },
-    from: { transform: 'translateY(100%)' },
-    to: { transform: 'translateY(0)' },
+    config: config.default,
+    from: { y: '100%' },
+    to: { y: '0%' },
   });
 
   return (

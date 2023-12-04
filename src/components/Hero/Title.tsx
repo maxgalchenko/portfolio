@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
-import { useTrail, a, config } from '@react-spring/web';
+import { useTrail, a } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
-import { clear } from 'console';
 
 const WordStyled = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
@@ -11,7 +10,7 @@ const WordStyled = styled(a.span)`
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  will-change: true;
+  will-change: transform, opacity;
 `;
 
 const BottomWordContainerStyled = styled(WordStyled)`
@@ -57,7 +56,7 @@ const Title = () => {
 
     return () => clearInterval(interval1);
   }, [topWord]);
-
+  // Bottom word
   useEffect(() => {
     const interval2 = setInterval(() => {
       setBottomWord(() => {
