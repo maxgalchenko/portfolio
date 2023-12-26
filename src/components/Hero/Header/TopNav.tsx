@@ -3,7 +3,7 @@ import { a, useTrail } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
 
 const StyledNav = styled.nav`
-  padding: ${({ theme }) => `${theme.vw.d(30)} ${theme.vw.d(60)}`};
+  padding: ${({ theme }) => `${theme.vw.d(40)} ${theme.vw.d(80)}`};
   font-size: ${({ theme }) => theme.vw.d(40)};
 `;
 
@@ -11,7 +11,7 @@ const StyledLetter = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.vw.d(40)};
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
   display: inline-block;
 `;
 

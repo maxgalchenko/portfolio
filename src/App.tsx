@@ -8,7 +8,7 @@ const AppStyled = styled(a.div)`
   animation: moveUp 0.3s ease-out forwards;
   background-color: ${({ theme }) => theme.color.black2};
   min-height: 100vh;
-  padding: ${({ theme }) => `0 ${theme.vw.d(60)}`};
+  padding: ${({ theme }) => `0 ${theme.vw.d(80)}`};
   width: 100%;
   box-sizing: border-box;
 `;

@@ -5,7 +5,7 @@ import ScrollDownIcon from './ScrollDownIcon';
 
 const FooterStyled = styled.div`
   position: absolute;
-  bottom: ${({ theme }) => theme.vw.d(60)};
+  bottom: ${({ theme }) => theme.vw.d(80)};
   width: 100%;
   display: flex;
   justify-content: space-between;

@@ -3,9 +3,13 @@ import { useEffect, useState } from 'react';
 import { useTrail, a } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
 
+const TitleStyled = styled.h1`
+  transform: translateY(${({ theme }) => theme.vw.d(-30)});
+`;
+
 const WordStyled = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(150)};
+  font-size: ${({ theme }) => theme.vw.d(165)};
   line-height: 0.9;
   text-transform: uppercase;
   position: relative;
@@ -22,7 +26,7 @@ const SpaceStyled = styled.span`
   margin-left: ${({ theme }) => theme.vw.d(45)};
 `;
 
-const topWords = ['Frontend', 'Web', 'React', 'Next', 'JS/TS'];
+const topWords = ['Frontend', 'Web', 'React.Js', 'Next.Js', 'JavaScript', 'TypeScript'];
 const bottomWords = ['Developer', 'Programmer', 'Engineer'];
 
 const Title = () => {
@@ -44,33 +48,28 @@ const Title = () => {
     delay: 100,
   });
 
-  // Top word
   useEffect(() => {
     const interval1 = setInterval(() => {
       setTopWord(() => {
         const filteredList = topWords.filter((prev) => prev !== topWord);
         const randomIndex = Math.floor(Math.random() * filteredList.length);
-        return filteredList[randomIndex];
+        const newTopWord = filteredList[randomIndex];
+        return newTopWord !== undefined ? newTopWord : topWord;
       });
-    }, 2500);
 
-    return () => clearInterval(interval1);
-  }, [topWord]);
-  // Bottom word
-  useEffect(() => {
-    const interval2 = setInterval(() => {
       setBottomWord(() => {
         const filteredList = bottomWords.filter((prev) => prev !== bottomWord);
         const randomIndex = Math.floor(Math.random() * filteredList.length);
-        return filteredList[randomIndex];
+        const newBottomWord = filteredList[randomIndex];
+        return newBottomWord !== undefined ? newBottomWord : bottomWord;
       });
     }, 5000);
 
-    return () => clearInterval(interval2);
-  }, [bottomWord]);
+    return () => clearInterval(interval1);
+  }, [topWord, bottomWord]);
 
   return (
-    <h1>
+    <TitleStyled>
       {topWordTrail.map((props, index) => (
         <WordStyled style={{ ...props }} key={index + topWord}>
           {topWord[index]}
@@ -85,7 +84,7 @@ const Title = () => {
           </WordStyled>
         ))}
       </BottomWordContainerStyled>
-    </h1>
+    </TitleStyled>
   );
 };
 
