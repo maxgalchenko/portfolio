@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import Company from './Company';
 import Separator from './Separator';
@@ -7,7 +7,7 @@ import magnificodeImg from './assets/magnificode.webp';
 import mrkterImg from './assets/mrkter.webp';
 import upworkImg from './assets/upwork.webp';
 import zipsaleImg from './assets/zipsale.webp';
-import { a, config, useInView, useSpring } from '@react-spring/web';
+import { a, useInView } from '@react-spring/web';
 
 const Container = styled(a.ul)`
   margin-bottom: ${({ theme }) => theme.vw.d(140)};
