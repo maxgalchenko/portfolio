@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Header from './components/Hero/Header';
 import Hero from './components/Hero';
-import { a, config, useSpring } from '@react-spring/web';
+import { a, config, useSpring, useSpringRef } from '@react-spring/web';
 import Advantages from './components/Advantages';
 import SelectedCompanies from './components/SelectedCompanies';
 import Footer from './components/Footer';
@@ -12,30 +12,28 @@ const AppStyled = styled(a.div)`
   padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
   width: 100%;
   box-sizing: border-box;
-  background-position: -100%;
-  position: relative;
-  z-index: 2;
+  background-color: ${({ theme }) => theme.color.black2};
 `;
 
-const Background = styled(a.div)`
-  background-color: ${({ theme }) => theme.color.black2};
-  width: 100%;
-  height: 100%;
-  position: absolute;
+const Background = styled(a.div)``;
+
+const SlideIn = styled(a.div)`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: -1;
+  background-color: ${({ theme }) => theme.color.white};
+  transform: scaleY(0) translateZ(0px);
 `;
-
-const SlideIn = styled(a.div)``;
 
 const SlideOut = styled(a.div)``;
 
 function App() {
-  const appSpring = useSpring({
-    config: config.slow,
-    from: { y: '100%' },
-    to: { y: '0%' },
+  const slideInSpring = useSpring({
+    config: config.molasses,
+    from: { y: '0' },
+    to: { y: '-100%' },
   });
 
   return (
@@ -48,8 +46,7 @@ function App() {
       </main>
       <Footer />
 
-      <Background style={appSpring} />
-      <SlideIn />
+      <SlideIn style={slideInSpring} />
       <SlideOut />
     </AppStyled>
   );

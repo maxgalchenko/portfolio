@@ -23,7 +23,7 @@ const advantages = [
   },
   {
     id: 4,
-    title: 'Responsiveness and accessibility',
+    title: 'Responsiveness and accessibility expertise',
   },
   {
     id: 5,

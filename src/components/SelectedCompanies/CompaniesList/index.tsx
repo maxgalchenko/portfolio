@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from '@emotion/styled';
 import Company from './Company';
 import Separator from './Separator';
@@ -7,8 +7,9 @@ import magnificodeImg from './assets/magnificode.webp';
 import mrkterImg from './assets/mrkter.webp';
 import upworkImg from './assets/upwork.webp';
 import zipsaleImg from './assets/zipsale.webp';
+import { a, config, useInView, useSpring } from '@react-spring/web';
 
-const Container = styled.ul`
+const Container = styled(a.ul)`
   margin-bottom: ${({ theme }) => theme.vw.d(140)};
 `;
 
@@ -46,11 +47,19 @@ const companies = [
 ];
 
 const CompaniesList = () => {
+  const [ref, inView] = useInView({
+    rootMargin: '-30% 0%',
+    once: true,
+  });
+
   return (
-    <Container>
-      <Separator />
+    <Container ref={ref}>
+      <Separator runAnimation={inView} />
       {companies.map(({ id, projectName, link, imgSrc }) => (
-        <Company key={id} projectName={projectName} link={link} imgSrc={imgSrc} />
+        <React.Fragment key={id}>
+          <Company projectName={projectName} link={link} imgSrc={imgSrc} runAnimation={inView} />
+          <Separator runAnimation={inView} />
+        </React.Fragment>
       ))}
     </Container>
   );

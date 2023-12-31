@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
-import { a, useInView, config } from '@react-spring/web';
+import { a, config, useSpring } from '@react-spring/web';
+import { useTheme } from '@emotion/react';
 
 const Title = styled(a.p)`
   font-size: ${({ theme }) => theme.vw.d(140)};
@@ -21,24 +22,35 @@ type Props = {
 };
 
 const Advantage = ({ title }: Props) => {
-  const [rightRef, inView] = useInView(
-    () => ({
-      from: {
-        backgroundPositionX: '100%',
-      },
-      to: {
-        backgroundPositionX: '0%',
-      },
-      config: config.slow,
-    }),
-    {
-      rootMargin: '-50% 0%',
-      once: true,
+  const ref = useRef<HTMLParagraphElement>(null);
+  const theme = useTheme();
+
+  const [isInView, setInView] = useState(false);
+  const spring = useSpring({
+    to: { backgroundPositionX: isInView ? '0%' : '100%' },
+    config: config.slow,
+  });
+
+  const checkInView = () => {
+    const element = ref.current;
+    if (element) {
+      const { top } = element.getBoundingClientRect();
+      if (top < 300) setInView(true);
+      else setInView(false);
     }
-  );
+  };
+
+  useEffect(() => {
+    checkInView();
+    window.addEventListener('scroll', checkInView);
+
+    return () => {
+      window.removeEventListener('scroll', checkInView);
+    };
+  }, []);
 
   return (
-    <Title ref={rightRef} style={inView}>
+    <Title ref={ref} style={spring}>
       {title}
     </Title>
   );
