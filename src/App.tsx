@@ -8,23 +8,38 @@ import SelectedCompanies from './components/SelectedCompanies';
 import Footer from './components/Footer';
 
 const AppStyled = styled(a.div)`
-  animation: moveUp 0.3s ease-out forwards;
-  background-color: ${({ theme }) => theme.color.black2};
   min-height: 100vh;
   padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
   width: 100%;
   box-sizing: border-box;
+  background-position: -100%;
+  position: relative;
+  z-index: 2;
 `;
+
+const Background = styled(a.div)`
+  background-color: ${({ theme }) => theme.color.black2};
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+`;
+
+const SlideIn = styled(a.div)``;
+
+const SlideOut = styled(a.div)``;
 
 function App() {
   const appSpring = useSpring({
-    config: config.default,
+    config: config.slow,
     from: { y: '100%' },
     to: { y: '0%' },
   });
 
   return (
-    <AppStyled style={appSpring}>
+    <AppStyled>
       <Header />
       <main>
         <Hero />
@@ -32,6 +47,10 @@ function App() {
         <SelectedCompanies />
       </main>
       <Footer />
+
+      <Background style={appSpring} />
+      <SlideIn />
+      <SlideOut />
     </AppStyled>
   );
 }

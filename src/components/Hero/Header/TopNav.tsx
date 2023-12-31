@@ -21,9 +21,10 @@ const TopNav = () => {
   const theme = useTheme();
 
   const fullNameTrail = useTrail(fullName.length, {
-    config: { mass: 1, tension: 500, friction: 40, clamp: true },
-    from: { y: theme.vw.d(5), opacity: 0 },
+    config: { tension: 0, friction: 0 },
+    from: { y: theme.vw.d(10), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
+    delay: 1000,
   });
 
   return (

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
-import { useTrail, a } from '@react-spring/web';
+import { useTrail, a, config } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
 
 const TitleStyled = styled.h1`
@@ -38,14 +38,14 @@ const Title = () => {
     config: { tension: 0, friction: 0 },
     from: { y: theme.vw.d(10), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
-    delay: 100,
+    delay: 1000,
   });
 
   const bottomWordTrail = useTrail(bottomWord.length, {
     config: { tension: 0, friction: 0 },
     from: { y: theme.vw.d(50), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
-    delay: 100,
+    delay: 1000,
   });
 
   useEffect(() => {

@@ -35,6 +35,7 @@ const ScrollDownIcon = () => {
     to: { rotate: 360 },
     loop: true,
     config: { duration: 15000 },
+    delay: 1000,
   });
 
   return (

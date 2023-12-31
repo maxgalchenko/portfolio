@@ -9,7 +9,7 @@ const Title = styled(a.p)`
   color: transparent;
   text-transform: uppercase;
   font-weight: 700;
-  width: 60%;
+  width: 80%;
   text-align: right;
   background-size: 200% 100%;
   background-clip: text;

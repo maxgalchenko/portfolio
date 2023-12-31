@@ -29,6 +29,7 @@ const Spinner = ({ animationDuration, animationDirection }: Props) => {
     to: { rotate: animationDirection === 'forward' ? 360 : 0 },
     loop: true,
     config: { duration: animationDuration },
+    delay: 1000,
   });
 
   return (

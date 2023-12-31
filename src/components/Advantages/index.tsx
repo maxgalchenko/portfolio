@@ -11,34 +11,31 @@ const Container = styled.ul`
 const advantages = [
   {
     id: 1,
-    title: 'Frontend Addict',
+    title: 'Frontend Focused',
   },
   {
     id: 2,
-    title: 'Pixel perfect',
+    title: 'Business oriented',
   },
   {
     id: 3,
-    title: 'Responsive',
+    title: 'Flexible and adaptable',
   },
   {
     id: 4,
-    title: 'GSAP',
+    title: 'Responsiveness and accessibility',
   },
   {
     id: 5,
-    title: 'Creative coder',
+    title: 'Optimization is a key',
   },
+
   {
     id: 6,
-    title: 'I love discovering new creative worlds',
-  },
-  {
-    id: 7,
     title: 'accessible',
   },
   {
-    id: 8,
+    id: 7,
     title: 'seo',
   },
 ];
