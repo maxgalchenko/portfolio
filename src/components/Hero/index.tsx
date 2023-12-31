@@ -7,6 +7,7 @@ const HeroStyled = styled.section`
   align-items: center;
   height: 100vh;
   position: relative;
+  margin-bottom: ${({ theme }) => theme.vw.d(200)};
 `;
 
 const Hero = () => {

@@ -23,7 +23,7 @@ type Props = {
   animationDirection: 'forward' | 'backward';
 };
 
-const ReactSpinner = ({ animationDuration, animationDirection }: Props) => {
+const Spinner = ({ animationDuration, animationDirection }: Props) => {
   const innerSpring = useSpring({
     from: { rotate: animationDirection === 'forward' ? 0 : 360 },
     to: { rotate: animationDirection === 'forward' ? 360 : 0 },
@@ -38,4 +38,4 @@ const ReactSpinner = ({ animationDuration, animationDirection }: Props) => {
   );
 };
 
-export default ReactSpinner;
+export default Spinner;

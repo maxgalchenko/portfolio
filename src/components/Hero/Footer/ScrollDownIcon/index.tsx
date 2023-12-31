@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import ReactSpinner from '../../../common/ReactSpinner';
+import Spinner from '../../../common/Spinner';
 import { a, useSpring } from '@react-spring/web';
 import { ReactComponent as RoundText } from './roundText.svg';
 
@@ -44,7 +44,7 @@ const ScrollDownIcon = () => {
       </OuterTextStyled>
 
       <InnerElementStyled>
-        <ReactSpinner animationDuration={10000} animationDirection="backward" />
+        <Spinner animationDuration={10000} animationDirection="backward" />
       </InnerElementStyled>
     </ContainerStyled>
   );

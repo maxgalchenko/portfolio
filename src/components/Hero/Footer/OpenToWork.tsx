@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import ReactSpinner from '../../common/ReactSpinner';
-import { fadeInAnimation, rotateAnimation, slideDownAnimation } from '../../../styles/Animations';
+import Spinner from '../../common/Spinner';
 import { useTheme } from '@emotion/react';
+import { a, useSpring, config } from '@react-spring/web';
 
-const TitleContainerStyled = styled.div`
+const TitleContainerStyled = styled(a.div)`
   ${({ theme }) => theme.flex.between};
   gap: ${({ theme }) => theme.vw.d(10)};
 `;
@@ -16,7 +16,6 @@ const TitleStyled = styled.p`
   font-weight: 400;
   text-transform: uppercase;
   white-space: nowrap;
-  animation: ${fadeInAnimation} 1s ease-in forwards;
   margin-right: ${({ theme }) => theme.vw.d(10)};
 `;
 
@@ -25,28 +24,38 @@ const SpinnerContainerStyled = styled.div`
   height: ${({ theme }) => theme.vw.d(35)};
 `;
 
-const SubTitleStyled = styled.p`
+const SubTitleStyled = styled(a.p)`
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.vw.d(20)};
   line-height: 1.5;
   font-weight: 300;
   margin-left: ${({ theme }) => theme.vw.d(3)};
-  opacity: 0;
-  animation: ${slideDownAnimation} 0.5s 0.5s ease-in-out forwards;
 `;
 
 const OpenToWork = () => {
-  const theme = useTheme();
+  const props = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 1000,
+    config: config.slow,
+  });
+
+  const props2 = useSpring({
+    from: { opacity: 0, y: -20 },
+    to: { opacity: 1, y: 0 },
+    delay: 1400,
+    config: config.slow,
+  });
 
   return (
     <div>
-      <TitleContainerStyled>
+      <TitleContainerStyled style={props}>
         <TitleStyled>open to work</TitleStyled>
         <SpinnerContainerStyled>
-          <ReactSpinner animationDirection="forward" animationDuration={5000} />
+          <Spinner animationDirection="forward" animationDuration={5000} />
         </SpinnerContainerStyled>
       </TitleContainerStyled>
-      <SubTitleStyled>Based in Canada, Vancouver</SubTitleStyled>
+      <SubTitleStyled style={props2}>Based in Canada, Vancouver</SubTitleStyled>
     </div>
   );
 };
