@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { a, config, useSpring } from '@react-spring/web';
+import { a, config, useInView, useSpring } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
 
 const Link = styled(a.a)`
@@ -18,7 +18,7 @@ const Link = styled(a.a)`
 const GetInTouch = () => {
   const [isHovered, setIsHovered] = React.useState(false);
   const theme = useTheme();
-  const spring = useSpring({
+  const hoverSpring = useSpring({
     config: config.stiff,
     from: { color: theme.color.black2, backgroundColor: 'transparent' },
     to: {
@@ -27,9 +27,22 @@ const GetInTouch = () => {
     },
   });
 
+  const [ref, inView] = useInView(
+    () => ({
+      config: config.molasses,
+      from: { x: theme.vw.d(-80), opacity: 0 },
+      to: { x: theme.vw.d(-0), opacity: 1 },
+    }),
+    {
+      rootMargin: '-20% 0%',
+      once: true,
+    }
+  );
+
   return (
     <Link
-      style={spring}
+      ref={ref}
+      style={{ ...hoverSpring, ...inView }}
       href="mailto:galchenko.maksym@gmail.com"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

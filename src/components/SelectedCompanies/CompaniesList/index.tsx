@@ -48,7 +48,7 @@ const companies = [
 
 const CompaniesList = () => {
   const [ref, inView] = useInView({
-    rootMargin: '-30% 0%',
+    rootMargin: '-20% 0%',
     once: true,
   });
 

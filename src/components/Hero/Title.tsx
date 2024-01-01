@@ -26,15 +26,43 @@ const SpaceStyled = styled.span`
   margin-left: ${({ theme }) => theme.vw.d(45)};
 `;
 
-const topWords = ['Frontend', 'Web', 'React.Js', 'Next.Js', 'JavaScript', 'TypeScript'];
-const bottomWords = ['Developer', 'Programmer', 'Engineer'];
+const data = [
+  {
+    topWord: 'Software',
+    bottomWord: 'Engineer',
+  },
+  {
+    topWord: 'Frontend',
+    bottomWord: 'Developer',
+  },
+  {
+    topWord: 'Web',
+    bottomWord: 'Programmer',
+  },
+  {
+    topWord: 'React.Js',
+    bottomWord: 'hacktivist',
+  },
+  {
+    topWord: 'JS/TS',
+    bottomWord: 'cracker',
+  },
+  {
+    topWord: 'IT',
+    bottomWord: 'geek',
+  },
+];
+
+// const topWords = ['Frontend', 'Web', 'React.Js', 'Next.Js', 'JS/TS', 'Software'];
+// const bottomWords = ['Developer', 'Programmer', 'Engineer', 'Coder', 'Guy'];
 
 const Title = () => {
   const theme = useTheme();
-  const [topWord, setTopWord] = useState(topWords[0]);
-  const [bottomWord, setBottomWord] = useState(bottomWords[0]);
+  const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  // const [topWord, setTopWord] = useState(data[0].topWord);
+  // const [bottomWord, setBottomWord] = useState(data[0].bottomWord);
 
-  const topWordTrail = useTrail(topWord.length, {
+  const topWordTrail = useTrail(data[currentItemIndex].topWord.length, {
     config: { tension: 0, friction: 0 },
     from: { y: theme.vw.d(10), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
@@ -42,7 +70,7 @@ const Title = () => {
     delay: 1000,
   });
 
-  const bottomWordTrail = useTrail(bottomWord.length, {
+  const bottomWordTrail = useTrail(data[currentItemIndex].bottomWord.length, {
     config: { tension: 0, friction: 0 },
     from: { y: theme.vw.d(50), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
@@ -50,38 +78,29 @@ const Title = () => {
   });
 
   useEffect(() => {
-    const interval1 = setInterval(() => {
-      setTopWord(() => {
-        const filteredList = topWords.filter((prev) => prev !== topWord);
-        const randomIndex = Math.floor(Math.random() * filteredList.length);
-        const newTopWord = filteredList[randomIndex];
-        return newTopWord !== undefined ? newTopWord : topWord;
-      });
-
-      setBottomWord(() => {
-        const filteredList = bottomWords.filter((prev) => prev !== bottomWord);
-        const randomIndex = Math.floor(Math.random() * filteredList.length);
-        const newBottomWord = filteredList[randomIndex];
-        return newBottomWord !== undefined ? newBottomWord : bottomWord;
+    const interval = setInterval(() => {
+      setCurrentItemIndex((curIndex) => {
+        if (curIndex === data.length - 1) return 0;
+        return curIndex + 1;
       });
     }, 3500);
 
-    return () => clearInterval(interval1);
-  }, [topWord, bottomWord]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <TitleStyled>
       {topWordTrail.map((props, index) => (
-        <WordStyled style={props} key={index + topWord}>
-          {topWord[index]}
+        <WordStyled style={props} key={index}>
+          {data[currentItemIndex].topWord[index]}
         </WordStyled>
       ))}
       <br />
       <SpaceStyled />
       <BottomWordContainerStyled>
         {bottomWordTrail.map((props, index) => (
-          <WordStyled style={props} key={index + bottomWord}>
-            {bottomWord[index]}
+          <WordStyled style={props} key={index}>
+            {data[currentItemIndex].bottomWord[index]}
           </WordStyled>
         ))}
       </BottomWordContainerStyled>

@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from './Link';
 import styled from '@emotion/styled';
+import { a, config, useInView, useSpring } from '@react-spring/web';
 
-const LinksList = styled.ul`
+const LinksList = styled(a.ul)`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.vw.d(20)};
@@ -22,8 +23,20 @@ const links = [
 ];
 
 const MyLinks = () => {
+  const [ref, inView] = useInView(
+    () => ({
+      config: config.molasses,
+      from: { y: '100%', opacity: 0 },
+      to: { y: '0%', opacity: 1 },
+    }),
+    {
+      once: true,
+      rootMargin: '-20% 0%',
+    }
+  );
+
   return (
-    <LinksList>
+    <LinksList ref={ref} style={inView}>
       {links.map(({ id, link, title }) => (
         <Link key={id} link={link} title={title} />
       ))}
