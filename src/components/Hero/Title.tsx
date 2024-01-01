@@ -38,6 +38,7 @@ const Title = () => {
     config: { tension: 0, friction: 0 },
     from: { y: theme.vw.d(10), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
+    reset: true,
     delay: 1000,
   });
 
@@ -63,7 +64,7 @@ const Title = () => {
         const newBottomWord = filteredList[randomIndex];
         return newBottomWord !== undefined ? newBottomWord : bottomWord;
       });
-    }, 5000);
+    }, 3500);
 
     return () => clearInterval(interval1);
   }, [topWord, bottomWord]);
@@ -71,7 +72,7 @@ const Title = () => {
   return (
     <TitleStyled>
       {topWordTrail.map((props, index) => (
-        <WordStyled style={{ ...props }} key={index + topWord}>
+        <WordStyled style={props} key={index + topWord}>
           {topWord[index]}
         </WordStyled>
       ))}

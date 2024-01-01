@@ -1,34 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { ReactComponent as ArrowRight } from './assets/arrowRight.svg';
+import { a, config, useSpring } from '@react-spring/web';
 
 const LinkStyled = styled.a`
   font-size: ${({ theme }) => theme.vw.d(30)};
   line-height: 1.5;
   color: ${({ theme }) => theme.color.white};
+  width: ${({ theme }) => theme.vw.d(250)};
+  ${({ theme }) => theme.flex.between};
+  position: relative;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
-const Link = () => {
+const ArrowRightContainer = styled.div`
+  width: ${({ theme }) => theme.vw.d(25)};
+  height: ${({ theme }) => theme.vw.d(25)};
+  ${({ theme }) => theme.flex.center};
+`;
+
+const BorderBottom = styled(a.div)`
+  height: 1px;
+  background-color: ${({ theme }) => theme.color.white};
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+type Props = {
+  link: string;
+  title: string;
+};
+
+const Link = ({ link, title }: Props) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hoverSpring = useSpring({
+    from: { width: '0%' },
+    to: { width: isHovered ? '100%' : '0%' },
+    config: config.stiff,
+  });
+
   return (
-    <LinkStyled href="github.com" target="_blank" rel="noopener noreferrer">
-      Github
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="Arrow / Arrow_Up_Right_LG">
-          <path
-            id="Vector"
-            d="M18.3646 5.63623H11.2939M18.3646 5.63623L18.3643 12.7073M18.3646 5.63623L5.63672 18.3642"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></path>
-        </g>
-      </svg>
+    <LinkStyled
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <p>{title}</p>
+      <ArrowRightContainer>
+        <ArrowRight />
+      </ArrowRightContainer>
+      <BorderBottom style={hoverSpring} />
     </LinkStyled>
   );
 };

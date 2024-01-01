@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
-import { useTheme } from '@emotion/react';
 
 const Title = styled(a.p)`
   font-size: ${({ theme }) => theme.vw.d(140)};
@@ -23,7 +22,6 @@ type Props = {
 
 const Advantage = ({ title }: Props) => {
   const ref = useRef<HTMLParagraphElement>(null);
-  const theme = useTheme();
 
   const [isInView, setInView] = useState(false);
   const spring = useSpring({

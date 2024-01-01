@@ -18,8 +18,8 @@ type Props = {
 const Separator = ({ runAnimation }: Props) => {
   const separatorSpring = useSpring({
     config: config.molasses,
-    from: { x: '-100%' },
-    to: { x: runAnimation ? '0%' : '-100%' },
+    from: { width: "0%" },
+    to: { width: runAnimation ? '100%' : '0%' },
     delay: 500,
   });
 

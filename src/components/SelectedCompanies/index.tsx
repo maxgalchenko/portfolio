@@ -7,7 +7,7 @@ import { useTheme } from '@emotion/react';
 
 const Container = styled.section`
   overflow: hidden;
-  width: 100%;
+  padding: 0 2.5%;
 `;
 
 const TitleContainer = styled.div`
