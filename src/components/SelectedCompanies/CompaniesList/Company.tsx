@@ -2,10 +2,11 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { a, config, useSpring } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
+import { Link } from 'react-router-dom';
 
 const Container = styled(a.li)``;
 
-const Link = styled.a`
+const LinkStyled = styled(Link)`
   ${({ theme }) => theme.flex.between};
   height: ${({ theme }) => theme.vw.d(200)};
 `;
@@ -71,12 +72,12 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
         imgSpring.height.start({ to: theme.vw.d(100) });
       }}
     >
-      <Link href={link}>
+      <LinkStyled to={link}>
         <Title style={titleHoverSpring}>{projectName}</Title>
         <ImageContainer>
           <Image style={imgSpring} src={imgSrc} alt={projectName} />
         </ImageContainer>
-      </Link>
+      </LinkStyled>
     </Container>
   );
 };

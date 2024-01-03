@@ -17,31 +17,31 @@ const companies = [
   {
     id: 1,
     projectName: 'Conexiom',
-    link: 'https://conexiom.com/',
+    link: '/conexiom',
     imgSrc: conexiomImg,
   },
   {
     id: 2,
     projectName: 'Mrkter',
-    link: 'https://mrkter.io/',
+    link: 'mrkter',
     imgSrc: mrkterImg,
   },
   {
     id: 3,
     projectName: 'Magnificode',
-    link: 'https://magnificode.net/',
+    link: 'magnificode',
     imgSrc: magnificodeImg,
   },
   {
     id: 4,
     projectName: 'Upwork',
-    link: 'https://www.upwork.com/',
+    link: 'upwork',
     imgSrc: upworkImg,
   },
   {
     id: 5,
     projectName: 'Zipsale',
-    link: 'https://www.zipsale.co.uk/',
+    link: 'zipsale',
     imgSrc: zipsaleImg,
   },
 ];
