@@ -2,44 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import EmotionTheme from './theme/EmotionTheme';
-import GlobalStyles from './theme/GlobalStyles';
-import { BreakpointProvider } from './hooks/useBreakpoint';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import CompanyPage from './components/CompanyPage';
-import PageTransition from './components/common/PageTransition';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: (
-      <PageTransition>
-        <App />
-      </PageTransition>
-    ),
-    // !Todo create 404 page
-    errorElement: <div>Error</div>,
-  },
-  {
-    path: ':companyName',
-    element: (
-      <PageTransition>
-        <CompanyPage />
-      </PageTransition>
-    ),
-  },
-]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <GlobalStyles />
-
-    <EmotionTheme>
-      <BreakpointProvider>
-        <RouterProvider router={router} />
-      </BreakpointProvider>
-    </EmotionTheme>
+    <App />
   </React.StrictMode>
 );
 
