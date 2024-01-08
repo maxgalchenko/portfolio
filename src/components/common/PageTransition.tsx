@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { a, config, useTransition } from '@react-spring/web';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const SlideIn = styled(a.div)`

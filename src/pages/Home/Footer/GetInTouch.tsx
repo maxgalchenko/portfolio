@@ -1,7 +1,7 @@
-import React from 'react';
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { a, config, useInView, useSpring } from '@react-spring/web';
-import { useTheme } from '@emotion/react';
+import React from 'react';
 
 const Link = styled(a.a)`
   font-size: ${({ theme }) => theme.vw.d(60)};

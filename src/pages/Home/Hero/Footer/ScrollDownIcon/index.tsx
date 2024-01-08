@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import React from 'react';
-import Spinner from '../../../../../components/common/Spinner';
 import { a, useSpring } from '@react-spring/web';
+import Spinner from '../../../../../components/common/Spinner';
 import { ReactComponent as RoundText } from './roundText.svg';
 
 const ContainerStyled = styled.div`

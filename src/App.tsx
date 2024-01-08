@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
-import PageTransition from './components/common/PageTransition';
-import Company from './pages/Company';
-import Home from './pages/Home';
-import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom';
-import GlobalStyles from './theme/GlobalStyles';
-import EmotionTheme from './theme/EmotionTheme';
-import { BreakpointProvider } from './hooks/useBreakpoint';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import conexiomPage from './assets/companyIndexPages/conexiom.webp';
-import mrkterPage from './assets/companyIndexPages/mrkter.webp';
 import magnificodePage from './assets/companyIndexPages/magnificode.webp';
+import mrkterPage from './assets/companyIndexPages/mrkter.webp';
 import upworkPage from './assets/companyIndexPages/upwork.webp';
 import zipsalePage from './assets/companyIndexPages/zipsale.webp';
+import PageTransition from './components/common/PageTransition';
+import { BreakpointProvider } from './hooks/useBreakpoint';
+import Company from './pages/Company';
+import Home from './pages/Home';
+import EmotionTheme from './theme/EmotionTheme';
+import GlobalStyles from './theme/GlobalStyles';
 
 const router = createBrowserRouter([
   {

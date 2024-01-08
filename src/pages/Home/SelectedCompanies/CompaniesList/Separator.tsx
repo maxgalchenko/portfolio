@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
 
@@ -18,7 +17,7 @@ type Props = {
 const Separator = ({ runAnimation }: Props) => {
   const separatorSpring = useSpring({
     config: config.molasses,
-    from: { width: "0%" },
+    from: { width: '0%' },
     to: { width: runAnimation ? '100%' : '0%' },
     delay: 500,
   });

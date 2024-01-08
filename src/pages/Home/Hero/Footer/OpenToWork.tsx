@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import { a, config, useSpring } from '@react-spring/web';
 import Spinner from '../../../../components/common/Spinner';
-import { useTheme } from '@emotion/react';
-import { a, useSpring, config } from '@react-spring/web';
 
 const TitleContainerStyled = styled(a.div)`
   ${({ theme }) => theme.flex.between};

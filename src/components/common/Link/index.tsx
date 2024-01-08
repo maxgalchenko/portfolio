@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { ReactComponent as ArrowRight } from './assets/arrowRight.svg';
 import { a, config, useSpring } from '@react-spring/web';
+import { useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 
 const LinkStyled = styled.a`
@@ -56,7 +55,7 @@ const Link = ({ link, title }: Props) => {
     >
       <p>{title}</p>
       <ArrowRightContainer>
-        <GoArrowUpRight size={10}/>
+        <GoArrowUpRight size={10} />
       </ArrowRightContainer>
       <BorderBottom style={hoverSpring} />
     </LinkStyled>

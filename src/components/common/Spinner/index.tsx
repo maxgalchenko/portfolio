@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import spinner from './spinner.svg';
 
 import { a, useSpring } from '@react-spring/web';

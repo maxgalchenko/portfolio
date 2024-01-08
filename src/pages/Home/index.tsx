@@ -1,12 +1,8 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Header from './Hero/Header';
-import Hero from './Hero';
-import { a } from '@react-spring/web';
-import Advantages from './Advantages';
-import SelectedCompanies from './SelectedCompanies';
-import Footer from './Footer';
 import PageContainer from '../../components/common/PageContainer';
+import Advantages from './Advantages';
+import Footer from './Footer';
+import Hero from './Hero';
+import SelectedCompanies from './SelectedCompanies';
 
 function Home() {
   return (

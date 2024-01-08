@@ -1,9 +1,8 @@
-import React from 'react';
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { a, config, useSpring } from '@react-spring/web';
 import Spinner from '../../../components/common/Spinner';
 import CompaniesList from './CompaniesList';
-import { a, config, useSpring } from '@react-spring/web';
-import { useTheme } from '@emotion/react';
 
 const Container = styled.section`
   overflow: hidden;

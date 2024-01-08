@@ -1,8 +1,7 @@
-import styled from '@emotion/styled';
-import { a, useTrail, config, useSpring } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
+import { a, config, useSpring, useTrail } from '@react-spring/web';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import DownloadCV from './DownloadCV';
 
 const StyledNav = styled.nav`

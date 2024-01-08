@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { GoArrowLeft } from "react-icons/go";
-import { a, config, useSpring } from '@react-spring/web';
+import { config, useSpring } from '@react-spring/web';
+import { useState } from 'react';
+import { GoArrowLeft } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 const LinkStyled = styled(Link)`

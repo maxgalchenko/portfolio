@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
-import { useTrail, a, config } from '@react-spring/web';
 import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
+import { a, useTrail } from '@react-spring/web';
+import { useEffect, useState } from 'react';
 
 const TitleStyled = styled.h1`
   transform: translateY(${({ theme }) => theme.vw.d(-30)});

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
+import { useState } from 'react';
 
 const DownloadLink = styled(a.a)`
   color: ${({ theme }) => theme.color.white};

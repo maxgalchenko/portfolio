@@ -1,5 +1,4 @@
 import { a, useSpring } from '@react-spring/web';
-import React from 'react';
 
 type Props = {
   children: string;

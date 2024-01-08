@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
-import { useTheme } from '@emotion/react';
+import { useEffect, useRef, useState } from 'react';
 
 const Title = styled(a.p)`
   font-size: ${({ theme }) => theme.vw.d(140)};
@@ -47,6 +47,7 @@ const Advantage = ({ title }: Props) => {
     return () => {
       window.removeEventListener('scroll', checkInView);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import styled from '@emotion/styled';
-import Header from '../Home/Hero/Header';
-import { a, config, useSpring, useTrail, useTransition } from '@react-spring/web';
-import PageContainer from '../../components/common/PageContainer';
-import { FaUsers, FaBriefcase } from 'react-icons/fa'; // People icon from React Icons
-import { MdLocationOn } from 'react-icons/md'; // Location icon from React Icons
-import { GiOfficeChair } from 'react-icons/gi'; // Office icon for onsite work
-import { BsCalendar } from 'react-icons/bs'; // Calendar icon for time
-import { FlagIcon, FlagIconCode } from 'react-flag-kit'; //
-import MysteriousText from '../../components/common/MysteriousText';
 import { useTheme } from '@emotion/react';
-import Link from '../../components/common/Link';
-import conexiomImg from './assets/conexiom.png';
+import styled from '@emotion/styled';
+import { a, config, useSpring, useTrail } from '@react-spring/web';
+import { FlagIcon, FlagIconCode } from 'react-flag-kit'; //
+import { BsCalendar } from 'react-icons/bs'; // Calendar icon for time
+import { FaBriefcase, FaUsers } from 'react-icons/fa'; // People icon from React Icons
+import { GiOfficeChair } from 'react-icons/gi'; // Office icon for onsite work
+import { MdLocationOn } from 'react-icons/md'; // Location icon from React Icons
 import BackToHomePage from '../../components/common/BackToHomePage';
+import Link from '../../components/common/Link';
+import MysteriousText from '../../components/common/MysteriousText';
+import PageContainer from '../../components/common/PageContainer';
 
 const MainStyled = styled.main`
   padding: ${({ theme }) => `${theme.vw.d(200)} 0 0`};

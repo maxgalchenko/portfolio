@@ -1,7 +1,6 @@
-import React from 'react';
-import Link from '../../../components/common/Link';
 import styled from '@emotion/styled';
-import { a, config, useInView, useSpring } from '@react-spring/web';
+import { a, config, useInView } from '@react-spring/web';
+import Link from '../../../components/common/Link';
 
 const LinksList = styled(a.ul)`
   display: flex;

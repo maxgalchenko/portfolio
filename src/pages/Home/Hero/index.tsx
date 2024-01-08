@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Title from './Title';
 import Footer from './Footer';
+import Title from './Title';
 
 const HeroStyled = styled.section`
   display: flex;

@@ -1,5 +1,5 @@
-import Advantage from './Advantage';
 import styled from '@emotion/styled';
+import Advantage from './Advantage';
 
 const Container = styled.ul`
   display: flex;
