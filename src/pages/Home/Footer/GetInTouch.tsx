@@ -13,6 +13,8 @@ const Link = styled(a.a)`
   font-weight: 400;
   border: 1px solid ${({ theme }) => theme.color.white};
   border-radius: 9999px;
+  ${({ theme }) => theme.flex.center};
+  margin-right: auto;
 `;
 
 const GetInTouch = () => {

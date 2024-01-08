@@ -9,46 +9,22 @@ const Container = styled.ul`
 `;
 
 const advantages = [
-  {
-    id: 1,
-    title: 'Frontend Focused',
-  },
-  {
-    id: 2,
-    title: 'Business oriented',
-  },
-  {
-    id: 3,
-    title: 'Business oriented',
-  },
-  {
-    id: 4,
-    title: 'SCRUM master',
-  },
-  {
-    id: 5,
-    title: 'Responsiveness and accessibility expertise',
-  },
-  {
-    id: 6,
-    title: 'Optimization is a key',
-  },
-
-  {
-    id: 7,
-    title: 'accessible',
-  },
-  {
-    id: 8,
-    title: 'seo',
-  },
+  'Frontend Focused',
+  'Business-Centric Approach',
+  'Leadership and Team Collaboration',
+  'Expertise in Responsiveness and Accessibility',
+  'Optimization Proficiency',
+  'SEO Integration',
+  'Agile Mastery',
+  'Accessibility Advocacy',
+  'Innovative Problem-Solving',
 ];
 
 const Advantages = () => {
   return (
     <Container>
-      {advantages.map(({ id, title }) => (
-        <li key={id}>
+      {advantages.map((title, index) => (
+        <li key={index}>
           <Advantage title={title} />
         </li>
       ))}

@@ -8,14 +8,6 @@ import SelectedCompanies from './SelectedCompanies';
 import Footer from './Footer';
 import PageContainer from '../../components/common/PageContainer';
 
-const AppStyled = styled(a.div)`
-  min-height: 100vh;
-  padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
-  width: 100%;
-  box-sizing: border-box;
-  background-color: ${({ theme }) => theme.color.black2};
-`;
-
 function Home() {
   return (
     <PageContainer>

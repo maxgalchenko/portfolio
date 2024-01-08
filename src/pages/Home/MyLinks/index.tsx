@@ -12,13 +12,31 @@ const LinksList = styled(a.ul)`
 const links = [
   {
     id: 1,
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/galchenko-max/',
+  },
+  {
+    id: 2,
     title: 'GitHub',
     link: 'https://github.com/Rainspistols',
   },
   {
+    id: 3,
+    title: 'Upwork',
+    link: 'https://www.upwork.com/freelancers/~0178b4cde2adb63163',
+  },
+];
+
+const links2 = [
+  {
+    id: 1,
+    title: 'All experience',
+    link: 'https://www.linkedin.com/in/galchenko-max/details/experience/',
+  },
+  {
     id: 2,
-    title: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/galchenko-max/',
+    title: 'Certifications',
+    link: 'https://www.linkedin.com/in/galchenko-max/details/certifications/',
   },
 ];
 
@@ -36,11 +54,18 @@ const MyLinks = () => {
   );
 
   return (
-    <LinksList ref={ref} style={inView}>
-      {links.map(({ id, link, title }) => (
-        <Link key={id} link={link} title={title} />
-      ))}
-    </LinksList>
+    <>
+      <LinksList ref={ref} style={inView}>
+        {links2.map(({ id, link, title }) => (
+          <Link key={id} link={link} title={title} />
+        ))}
+      </LinksList>
+      <LinksList ref={ref} style={inView}>
+        {links.map(({ id, link, title }) => (
+          <Link key={id} link={link} title={title} />
+        ))}
+      </LinksList>
+    </>
   );
 };
 

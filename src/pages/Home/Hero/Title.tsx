@@ -32,7 +32,7 @@ const data = [
     bottomWord: 'Engineer',
   },
   {
-    topWord: 'Front end',
+    topWord: 'Front-end',
     bottomWord: 'Developer',
   },
   {
@@ -92,9 +92,7 @@ const Title = () => {
     <TitleStyled>
       {topWordTrail.map((props, index) => (
         <WordStyled style={props} key={index}>
-          {data[currentItemIndex].topWord[index] === ' '
-            ? '\u00A0'
-            : data[currentItemIndex].topWord[index]}
+          {data[currentItemIndex].topWord[index]}
         </WordStyled>
       ))}
       <br />

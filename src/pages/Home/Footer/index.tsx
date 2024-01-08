@@ -4,7 +4,8 @@ import styled from '@emotion/styled';
 import MyLinks from '../MyLinks';
 
 const FooterStyled = styled.footer`
-  ${({ theme }) => theme.flex.between};
+  display: flex;
+  gap: ${({ theme }) => theme.vw.d(100)};
 `;
 
 const Footer = () => {
