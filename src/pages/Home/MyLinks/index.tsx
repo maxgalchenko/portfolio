@@ -12,7 +12,7 @@ const Container = styled.div`
 
   ${({ theme }) => theme.media.m} {
     flex-direction: column;
-    gap: ${({ theme }) => theme.vw.m(30)};
+    gap: ${({ theme }) => theme.vw.m(20)};
   }
 `;
 
@@ -25,7 +25,7 @@ const LinksList = styled(a.ul)`
   }
 
   ${({ theme }) => theme.media.m} {
-    gap: ${({ theme }) => theme.vw.m(30)};
+    gap: ${({ theme }) => theme.vw.m(20)};
   }
 `;
 
@@ -76,18 +76,14 @@ const MyLinks = () => {
   return (
     <Container>
       <LinksList ref={ref} style={inView}>
-        <li>
           {links2.map(({ id, link, title }) => (
             <Link key={id} link={link} title={title} />
           ))}
-        </li>
       </LinksList>
       <LinksList ref={ref} style={inView}>
-        <li>
           {links.map(({ id, link, title }) => (
             <Link key={id} link={link} title={title} />
           ))}
-        </li>
       </LinksList>
     </Container>
   );

@@ -63,19 +63,21 @@ const Link = ({ link, title }: Props) => {
   });
 
   return (
-    <LinkStyled
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <p>{title}</p>
-      <ArrowRightContainer>
-        <GoArrowUpRight size={10} />
-      </ArrowRightContainer>
-      <BorderBottom style={hoverSpring} />
-    </LinkStyled>
+    <li>
+      <LinkStyled
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <p>{title}</p>
+        <ArrowRightContainer>
+          <GoArrowUpRight size={10} />
+        </ArrowRightContainer>
+        <BorderBottom style={hoverSpring} />
+      </LinkStyled>
+    </li>
   );
 };
 

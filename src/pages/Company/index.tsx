@@ -67,7 +67,7 @@ const Title = styled.h2`
 
 const TitleChar = styled(a.div)``;
 
-const AboutCompany = styled(a.p)`
+const AboutCompany = styled(a.div)`
   color: ${({ theme }) => theme.color.white};
   opacity: 0.6;
   line-height: 1.5;

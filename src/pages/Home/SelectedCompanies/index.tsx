@@ -22,7 +22,7 @@ const TitleContainer = styled.div`
   ${({ theme }) => theme.media.m} {
     gap: ${({ theme }) => theme.vw.m(20)};
     margin-bottom: ${({ theme }) => theme.vw.m(30)};
-    height: ${({ theme }) => theme.vw.m(25)};
+    height: ${({ theme }) => theme.vw.m(22)};
   }
 `;
 
@@ -60,7 +60,7 @@ const SelectedCompanies = () => {
   const [ref, inView] = useInView(
     () => ({
       config: config.molasses,
-      from: { y: '120%' },
+      from: { y: '100%' },
       to: { y: '0%' },
     }),
     {

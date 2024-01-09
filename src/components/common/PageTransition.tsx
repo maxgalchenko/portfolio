@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { a, config, useTransition } from '@react-spring/web';
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import { ScrollRestoration } from 'react-router-dom';
 
 const SlideIn = styled(a.div)`
   width: 100vw;
@@ -18,12 +18,6 @@ type Props = {
 };
 
 const PageTransition = ({ children }: Props) => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   const transitions = useTransition(children, {
     config: config.default,
     from: { y: '0%' },
@@ -37,6 +31,7 @@ const PageTransition = ({ children }: Props) => {
       {transitions((style, item) => (
         <>
           {item}
+          <ScrollRestoration />
           <SlideIn style={style} />
         </>
       ))}
