@@ -6,7 +6,7 @@ const Container = styled.ul`
   flex-direction: column;
 
   ${({ theme }) => theme.media.d} {
-    gap: ${({ theme }) => theme.vw.d(150)};
+    gap: ${({ theme }) => theme.vw.d(120)};
     margin-bottom: ${({ theme }) => theme.vw.d(100)};
   }
 

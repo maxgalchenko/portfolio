@@ -15,7 +15,7 @@ const Title = styled(a.p)`
   margin-left: auto;
 
   ${({ theme }) => theme.media.d} {
-    font-size: ${({ theme }) => theme.vw.d(140)};
+    font-size: ${({ theme }) => theme.vw.d(120)};
     width: 80%;
   }
 
