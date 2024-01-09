@@ -3,8 +3,14 @@ import { a, config, useInView } from '@react-spring/web';
 import Link from '../../../components/common/Link';
 
 const Container = styled.div`
+  display: flex;
+
+  ${({ theme }) => theme.media.d} {
+    flex-direction: row;
+    gap: ${({ theme }) => theme.vw.m(30)};
+  }
+
   ${({ theme }) => theme.media.m} {
-    display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.vw.m(30)};
   }

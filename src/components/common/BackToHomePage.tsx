@@ -4,6 +4,10 @@ import { useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
+const Container = styled(a.div)`
+  border: 0px solid ${({ theme }) => theme.color.white};
+`;
+
 const LinkStyled = styled(Link)`
   line-height: 1.5;
   color: ${({ theme }) => theme.color.white};
@@ -45,13 +49,13 @@ const BackToHomePage = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverSpring = useSpring({
-    from: { width: '0%' },
-    to: { width: isHovered ? '100%' : '0%' },
+    from: { scale: 1 },
+    to: { scale: isHovered ? 1.05 : 1 },
     config: config.stiff,
   });
 
   return (
-    <a.div style={hoverSpring}>
+    <Container style={hoverSpring}>
       <LinkStyled
         to="/"
         onMouseEnter={() => setIsHovered(true)}
@@ -62,7 +66,7 @@ const BackToHomePage = () => {
         </ArrowRightContainer>
         <p>Go back to home page</p>
       </LinkStyled>
-    </a.div>
+    </Container>
   );
 };
 

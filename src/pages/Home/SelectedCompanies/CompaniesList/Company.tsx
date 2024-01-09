@@ -89,7 +89,7 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
     <Container
       style={companySpring}
       onMouseEnter={() => {
-        titleHoverSpring.x.start({ to: '6vw' });
+        titleHoverSpring.x.start({ to: '3vw' });
         imgSpring.opacity.start({ to: 1 });
         imgSpring.height.start({ to: theme.vw.d(200) });
       }}

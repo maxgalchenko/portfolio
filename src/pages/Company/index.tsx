@@ -156,6 +156,8 @@ const BackToHomePageContainer = styled.div`
   ${({ theme }) => theme.media.d} {
     transform: translateX(${({ theme }) => theme.vw.d(-150)});
   }
+
+ 
 `;
 
 // !Todo mouse pointer animation?
