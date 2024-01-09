@@ -4,17 +4,28 @@ import { a, config, useInView, useSpring } from '@react-spring/web';
 import React from 'react';
 
 const Link = styled(a.a)`
-  font-size: ${({ theme }) => theme.vw.d(60)};
   color: ${({ theme }) => theme.color.white};
   line-height: 1.5;
   text-align: center;
-  padding: ${({ theme }) => `${theme.vw.d(10)} ${theme.vw.d(40)}`};
   text-transform: uppercase;
   font-weight: 400;
   border: 1px solid ${({ theme }) => theme.color.white};
   border-radius: 9999px;
   ${({ theme }) => theme.flex.center};
-  margin-right: auto;
+
+  ${({ theme }) => theme.media.d} {
+    padding: ${({ theme }) => `${theme.vw.d(10)} ${theme.vw.d(40)}`};
+    font-size: ${({ theme }) => theme.vw.d(60)};
+    margin-right: auto;
+  }
+
+  ${({ theme }) => theme.media.m} {
+    padding: ${({ theme }) => theme.vw.m(10)};
+    font-size: ${({ theme }) => theme.vw.m(30)};
+    ${({ theme }) => theme.flex.center};
+    width: 100%;
+    box-sizing: border-box;
+  }
 `;
 
 const GetInTouch = () => {

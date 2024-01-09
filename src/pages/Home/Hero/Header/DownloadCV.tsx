@@ -5,14 +5,22 @@ import { useState } from 'react';
 
 const DownloadLink = styled(a.a)`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(20)};
   line-height: 1.5;
   font-weight: 300;
   border: none;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.color.white};
   border-radius: 20px;
-  padding: ${({ theme }) => `${theme.vw.d(10)} ${theme.vw.d(20)}`};
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(20)};
+    padding: ${({ theme }) => `${theme.vw.d(10)} ${theme.vw.d(20)}`};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(14)};
+    padding: ${({ theme }) => `${theme.vw.m(10)} ${theme.vw.m(40)}`};
+  }
 `;
 
 type Props = {

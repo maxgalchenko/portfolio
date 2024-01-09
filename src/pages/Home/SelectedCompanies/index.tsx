@@ -1,6 +1,5 @@
-import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { a, config, useSpring } from '@react-spring/web';
+import { a, config, useInView, useSpring } from '@react-spring/web';
 import Spinner from '../../../components/common/Spinner';
 import CompaniesList from './CompaniesList';
 
@@ -12,22 +11,45 @@ const Container = styled.section`
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.vw.d(20)};
-  margin-bottom: ${({ theme }) => theme.vw.d(100)};
   overflow: hidden;
-  height: ${({ theme }) => theme.vw.d(35)};
+
+  ${({ theme }) => theme.media.d} {
+    gap: ${({ theme }) => theme.vw.d(20)};
+    margin-bottom: ${({ theme }) => theme.vw.d(100)};
+    height: ${({ theme }) => theme.vw.d(35)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    gap: ${({ theme }) => theme.vw.m(20)};
+    margin-bottom: ${({ theme }) => theme.vw.m(30)};
+    height: ${({ theme }) => theme.vw.m(25)};
+  }
 `;
 
 const SpinnerContainer = styled(a.div)`
-  width: ${({ theme }) => theme.vw.d(35)};
-  height: ${({ theme }) => theme.vw.d(35)};
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(35)};
+    height: ${({ theme }) => theme.vw.d(35)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(25)};
+    height: ${({ theme }) => theme.vw.m(25)};
+  }
 `;
 
 const Title = styled(a.h2)`
-  font-size: ${({ theme }) => theme.vw.d(20)};
   color: ${({ theme }) => theme.color.white};
   text-transform: uppercase;
   font-weight: 300;
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(20)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(16)};
+  }
 `;
 
 // Todo add sections and h1-h6 tags to all main sections
@@ -35,13 +57,17 @@ const Title = styled(a.h2)`
 // Todo do mobile version
 
 const SelectedCompanies = () => {
-  const theme = useTheme();
-  const titleSpring = useSpring({
-    config: config.slow,
-    from: { y: theme.vw.d(50) },
-    to: { y: theme.vw.d(0) },
-    delay: 500,
-  });
+  const [ref, inView] = useInView(
+    () => ({
+      config: config.molasses,
+      from: { y: '100%' },
+      to: { y: '0%' },
+    }),
+    {
+      once: true,
+      rootMargin: '-30% 0%',
+    }
+  );
 
   const spinnerSpring = useSpring({
     config: config.slow,
@@ -56,7 +82,9 @@ const SelectedCompanies = () => {
         <SpinnerContainer style={spinnerSpring}>
           <Spinner animationDuration={5000} animationDirection="forward" />
         </SpinnerContainer>
-        <Title style={titleSpring}>Selected Companies</Title>
+        <Title ref={ref} style={inView}>
+          Selected Companies
+        </Title>
       </TitleContainer>
       <CompaniesList />
     </Container>

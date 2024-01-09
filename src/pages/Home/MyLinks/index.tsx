@@ -2,10 +2,25 @@ import styled from '@emotion/styled';
 import { a, config, useInView } from '@react-spring/web';
 import Link from '../../../components/common/Link';
 
+const Container = styled.div`
+  ${({ theme }) => theme.media.m} {
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.vw.m(30)};
+  }
+`;
+
 const LinksList = styled(a.ul)`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.vw.d(20)};
+
+  ${({ theme }) => theme.media.d} {
+    gap: ${({ theme }) => theme.vw.d(20)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    gap: ${({ theme }) => theme.vw.m(30)};
+  }
 `;
 
 const links = [
@@ -53,7 +68,7 @@ const MyLinks = () => {
   );
 
   return (
-    <>
+    <Container>
       <LinksList ref={ref} style={inView}>
         {links2.map(({ id, link, title }) => (
           <Link key={id} link={link} title={title} />
@@ -64,7 +79,7 @@ const MyLinks = () => {
           <Link key={id} link={link} title={title} />
         ))}
       </LinksList>
-    </>
+    </Container>
   );
 };
 

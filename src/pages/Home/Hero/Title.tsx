@@ -4,22 +4,38 @@ import { a, useTrail } from '@react-spring/web';
 import { useEffect, useState } from 'react';
 
 const TitleStyled = styled.h1`
-  transform: translateY(${({ theme }) => theme.vw.d(-30)});
+  ${({ theme }) => theme.media.d} {
+    transform: translateY(${({ theme }) => theme.vw.d(-30)});
+  }
 `;
 
 const WordStyled = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(165)};
   line-height: 0.9;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
   will-change: transform, opacity;
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(165)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(40)};
+  }
 `;
 
 const BottomWordContainerStyled = styled(WordStyled)`
-  max-height: ${({ theme }) => theme.vw.d(140)};
   overflow: hidden;
+
+  ${({ theme }) => theme.media.d} {
+    max-height: ${({ theme }) => theme.vw.d(140)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    max-height: ${({ theme }) => theme.vw.m(38)};
+  }
 `;
 
 const SpaceStyled = styled.span`
@@ -53,14 +69,9 @@ const data = [
   },
 ];
 
-// const topWords = ['Frontend', 'Web', 'React.Js', 'Next.Js', 'JS/TS', 'Software'];
-// const bottomWords = ['Developer', 'Programmer', 'Engineer', 'Coder', 'Guy'];
-
 const Title = () => {
   const theme = useTheme();
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
-  // const [topWord, setTopWord] = useState(data[0].topWord);
-  // const [bottomWord, setBottomWord] = useState(data[0].bottomWord);
 
   const topWordTrail = useTrail(data[currentItemIndex].topWord.length, {
     config: { tension: 0, friction: 0 },

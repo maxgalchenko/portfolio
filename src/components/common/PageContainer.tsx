@@ -4,10 +4,17 @@ import Header from '../../pages/Home/Hero/Header';
 
 const Container = styled.div`
   min-height: 100vh;
-  padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
   width: 100%;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.color.black2};
+
+  ${({ theme }) => theme.media.d} {
+    padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    padding: ${({ theme }) => `0 ${theme.vw.m(30)} ${theme.vw.m(80)} ${theme.vw.m(30)}`};
+  }
 `;
 
 type Props = {

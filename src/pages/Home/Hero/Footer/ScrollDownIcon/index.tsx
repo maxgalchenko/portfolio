@@ -5,8 +5,16 @@ import { ReactComponent as RoundText } from './roundText.svg';
 
 const ContainerStyled = styled.div`
   position: relative;
-  width: ${({ theme }) => theme.vw.d(130)};
-  height: ${({ theme }) => theme.vw.d(130)};
+
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(130)};
+    height: ${({ theme }) => theme.vw.d(130)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(100)};
+    height: ${({ theme }) => theme.vw.m(100)};
+  }
 `;
 
 const OuterTextStyled = styled(a.div)`

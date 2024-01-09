@@ -1,30 +1,44 @@
 import styled from '@emotion/styled';
-import { config, useSpring } from '@react-spring/web';
+import { a, config, useSpring } from '@react-spring/web';
 import { useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 const LinkStyled = styled(Link)`
-  font-size: ${({ theme }) => theme.vw.d(24)};
   line-height: 1.5;
   color: ${({ theme }) => theme.color.white};
-  width: ${({ theme }) => theme.vw.d(250)};
-  ${({ theme }) => theme.flex.between};
   position: relative;
   white-space: nowrap;
-  width: min-content;
-  gap: ${({ theme }) => theme.vw.d(20)};
 
-  svg {
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(250)};
+    font-size: ${({ theme }) => theme.vw.d(24)};
+    gap: ${({ theme }) => theme.vw.d(20)};
+    ${({ theme }) => theme.flex.between};
+  }
+
+  ${({ theme }) => theme.media.m} {
     width: 100%;
-    height: 100%;
+    gap: ${({ theme }) => theme.vw.m(20)};
+    font-size: ${({ theme }) => theme.vw.m(20)};
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 `;
 
 const ArrowRightContainer = styled.div`
-  width: ${({ theme }) => theme.vw.d(25)};
-  height: ${({ theme }) => theme.vw.d(25)};
   ${({ theme }) => theme.flex.center};
+
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(25)};
+    height: ${({ theme }) => theme.vw.d(25)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(25)};
+    height: ${({ theme }) => theme.vw.m(25)};
+  }
 `;
 
 const BackToHomePage = () => {
@@ -37,16 +51,18 @@ const BackToHomePage = () => {
   });
 
   return (
-    <LinkStyled
-      to="/"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <ArrowRightContainer>
-        <GoArrowLeft size={20} />
-      </ArrowRightContainer>
-      <p>Go back to home page</p>
-    </LinkStyled>
+    <a.div style={hoverSpring}>
+      <LinkStyled
+        to="/"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <ArrowRightContainer>
+          <GoArrowLeft />
+        </ArrowRightContainer>
+        <p>Go back to home page</p>
+      </LinkStyled>
+    </a.div>
   );
 };
 

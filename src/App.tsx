@@ -5,7 +5,6 @@ import mrkterPage from './assets/companyIndexPages/mrkter.webp';
 import upworkPage from './assets/companyIndexPages/upwork.webp';
 import zipsalePage from './assets/companyIndexPages/zipsale.webp';
 import PageTransition from './components/common/PageTransition';
-import { BreakpointProvider } from './hooks/useBreakpoint';
 import Company from './pages/Company';
 import Home from './pages/Home';
 import EmotionTheme from './theme/EmotionTheme';
@@ -125,9 +124,7 @@ const App = () => {
       <GlobalStyles />
 
       <EmotionTheme>
-        <BreakpointProvider>
-          <RouterProvider router={router} />
-        </BreakpointProvider>
+        <RouterProvider router={router} />
       </EmotionTheme>
     </>
   );

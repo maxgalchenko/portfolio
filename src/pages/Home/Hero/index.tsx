@@ -7,7 +7,14 @@ const HeroStyled = styled.section`
   align-items: center;
   height: 100vh;
   position: relative;
-  margin-bottom: ${({ theme }) => theme.vw.d(200)};
+
+  ${({ theme }) => theme.media.d} {
+    margin-bottom: ${({ theme }) => theme.vw.d(200)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    margin-bottom: ${({ theme }) => theme.vw.m(100)};
+  }
 `;
 
 const Hero = () => {

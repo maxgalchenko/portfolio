@@ -4,10 +4,8 @@ import { useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 
 const LinkStyled = styled.a`
-  font-size: ${({ theme }) => theme.vw.d(24)};
   line-height: 1.5;
   color: ${({ theme }) => theme.color.white};
-  width: ${({ theme }) => theme.vw.d(250)};
   ${({ theme }) => theme.flex.between};
   position: relative;
 
@@ -15,12 +13,31 @@ const LinkStyled = styled.a`
     width: 100%;
     height: 100%;
   }
+
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(250)};
+    font-size: ${({ theme }) => theme.vw.d(24)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(250)};
+    font-size: ${({ theme }) => theme.vw.m(20)};
+    width: 100%;
+  }
 `;
 
 const ArrowRightContainer = styled.div`
-  width: ${({ theme }) => theme.vw.d(25)};
-  height: ${({ theme }) => theme.vw.d(25)};
   ${({ theme }) => theme.flex.center};
+
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(25)};
+    height: ${({ theme }) => theme.vw.d(25)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(25)};
+    height: ${({ theme }) => theme.vw.m(25)};
+  }
 `;
 
 const BorderBottom = styled(a.div)`

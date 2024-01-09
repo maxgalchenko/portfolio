@@ -4,30 +4,61 @@ import Spinner from '../../../../components/common/Spinner';
 
 const TitleContainerStyled = styled(a.div)`
   ${({ theme }) => theme.flex.between};
-  gap: ${({ theme }) => theme.vw.d(10)};
+
+  ${({ theme }) => theme.media.d} {
+    gap: ${({ theme }) => theme.vw.d(10)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    gap: ${({ theme }) => theme.vw.m(5)};
+    margin-bottom: ${({ theme }) => theme.vw.m(5)};
+  }
 `;
 
 const TitleStyled = styled.p`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(36)};
   line-height: 1.5;
   font-weight: 400;
   text-transform: uppercase;
   white-space: nowrap;
-  margin-right: ${({ theme }) => theme.vw.d(10)};
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(36)};
+    margin-right: ${({ theme }) => theme.vw.d(10)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(16)};
+    margin-right: ${({ theme }) => theme.vw.m(5)};
+  }
 `;
 
 const SpinnerContainerStyled = styled.div`
-  width: ${({ theme }) => theme.vw.d(35)};
-  height: ${({ theme }) => theme.vw.d(35)};
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(35)};
+    height: ${({ theme }) => theme.vw.d(35)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(30)};
+    height: ${({ theme }) => theme.vw.m(30)};
+  }
 `;
 
 const SubTitleStyled = styled(a.p)`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(20)};
   line-height: 1.5;
   font-weight: 300;
-  margin-left: ${({ theme }) => theme.vw.d(3)};
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(20)};
+    margin-left: ${({ theme }) => theme.vw.d(3)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(12)};
+    margin-left: ${({ theme }) => theme.vw.m(3)};
+  }
 `;
 
 const OpenToWork = () => {

@@ -5,31 +5,61 @@ import { Link } from 'react-router-dom';
 import DownloadCV from './DownloadCV';
 
 const StyledNav = styled.nav`
-  padding: ${({ theme }) => `${theme.vw.d(40)} ${theme.vw.d(80)}`};
-  font-size: ${({ theme }) => theme.vw.d(40)};
   ${({ theme }) => theme.flex.between};
   z-index: 2;
   position: relative;
+
+  ${({ theme }) => theme.media.d} {
+    padding: ${({ theme }) => `${theme.vw.d(40)} ${theme.vw.d(80)}`};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    padding: ${({ theme }) => theme.vw.m(30)};
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${({ theme }) => theme.vw.m(40)};
+  }
 `;
 
 const StyledLetter = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(40)};
   line-height: 1.5;
   font-weight: 300;
   display: inline-block;
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(40)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(16)};
+  }
 `;
 
 const CVContainer = styled(a.div)`
   ${({ theme }) => theme.flex.between};
-  gap: ${({ theme }) => theme.vw.d(10)};
+
+  ${({ theme }) => theme.media.d} {
+    gap: ${({ theme }) => theme.vw.d(10)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    gap: ${({ theme }) => theme.vw.m(10)};
+  }
 `;
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.vw.d(30)};
   line-height: 1.5;
   font-weight: 300;
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(30)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(12)};
+  }
 `;
 
 const fullName = 'Max Galchenko';

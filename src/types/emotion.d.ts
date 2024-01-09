@@ -26,7 +26,10 @@ type Theme = {
   color: ColorPalette;
   vw: ViewportUnits;
   flex: FlexStyles;
-  mediaDesktop: string;
+  media: {
+    m: string;
+    d: string;
+  };
 };
 
 declare module '@emotion/react' {
@@ -34,6 +37,9 @@ declare module '@emotion/react' {
     color: ColorPalette;
     vw: ViewportUnits;
     flex: FlexStyles;
-    mediaDesktop: string;
+    media: {
+      m: string;
+      d: string;
+    };
   }
 }

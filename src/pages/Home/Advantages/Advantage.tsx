@@ -4,18 +4,29 @@ import { a, config, useSpring } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
 
 const Title = styled(a.p)`
-  font-size: ${({ theme }) => theme.vw.d(140)};
   line-height: 1.2;
   background: linear-gradient(to right, rgb(255, 255, 255) 50%, rgb(37, 37, 37) 50%);
   color: transparent;
   text-transform: uppercase;
   font-weight: 700;
-  width: 80%;
   text-align: right;
   background-size: 200% 100%;
   background-clip: text;
   margin-left: auto;
+
+  ${({ theme }) => theme.media.d} {
+    font-size: ${({ theme }) => theme.vw.d(140)};
+    width: 80%;
+  }
+
+  ${({ theme }) => theme.media.m} {
+    font-size: ${({ theme }) => theme.vw.m(25)};
+    width: 95%;
+  }
 `;
+
+// Todo update favicon
+// Todo add cool cursor?
 
 type Props = {
   title: string;

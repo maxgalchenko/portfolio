@@ -10,7 +10,13 @@ import upworkImg from './assets/upwork.webp';
 import zipsaleImg from './assets/zipsale.webp';
 
 const Container = styled(a.ul)`
-  margin-bottom: ${({ theme }) => theme.vw.d(140)};
+  ${({ theme }) => theme.media.d} {
+    margin-bottom: ${({ theme }) => theme.vw.d(140)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    margin-bottom: ${({ theme }) => theme.vw.m(140)};
+  }
 `;
 
 const companies = [

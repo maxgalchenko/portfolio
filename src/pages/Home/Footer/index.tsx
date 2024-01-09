@@ -5,6 +5,15 @@ import GetInTouch from './GetInTouch';
 const FooterStyled = styled.footer`
   display: flex;
   gap: ${({ theme }) => theme.vw.d(100)};
+
+  ${({ theme }) => theme.media.d} {
+    gap: ${({ theme }) => theme.vw.d(100)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.vw.m(40)};
+  }
 `;
 
 const Footer = () => {

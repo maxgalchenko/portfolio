@@ -27,7 +27,10 @@ const theme: Theme = {
     },
   },
 
-  mediaDesktop: '@media (min-width: 1280px)',
+  media: {
+    d: '@media (min-width: 1024px)',
+    m: '@media (max-width: 1023px)',
+  },
 };
 
 const EmotionTheme = ({ children }: { children: ReactElement }) => (
