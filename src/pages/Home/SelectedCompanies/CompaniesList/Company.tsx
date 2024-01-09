@@ -102,7 +102,7 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
       <LinkStyled to={link}>
         <Title style={titleHoverSpring}>{projectName}</Title>
         <ImageContainer>
-          <Image style={imgSpring} src={imgSrc} alt={projectName} />
+          <Image style={imgSpring} src={imgSrc} alt='' />
         </ImageContainer>
       </LinkStyled>
     </Container>

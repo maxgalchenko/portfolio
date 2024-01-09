@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { a, useInView } from '@react-spring/web';
-import React from 'react';
 import Company from './Company';
 import Separator from './Separator';
 import conexiomImg from './assets/conexiom.webp';
@@ -62,10 +61,10 @@ const CompaniesList = () => {
     <Container ref={ref}>
       <Separator runAnimation={inView} />
       {companies.map(({ id, projectName, link, imgSrc }) => (
-        <React.Fragment key={id}>
+        <li key={id}>
           <Company projectName={projectName} link={link} imgSrc={imgSrc} runAnimation={inView} />
           <Separator runAnimation={inView} />
-        </React.Fragment>
+        </li>
       ))}
     </Container>
   );

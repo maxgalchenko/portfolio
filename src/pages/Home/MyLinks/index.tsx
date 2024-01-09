@@ -76,14 +76,18 @@ const MyLinks = () => {
   return (
     <Container>
       <LinksList ref={ref} style={inView}>
-        {links2.map(({ id, link, title }) => (
-          <Link key={id} link={link} title={title} />
-        ))}
+        <li>
+          {links2.map(({ id, link, title }) => (
+            <Link key={id} link={link} title={title} />
+          ))}
+        </li>
       </LinksList>
       <LinksList ref={ref} style={inView}>
-        {links.map(({ id, link, title }) => (
-          <Link key={id} link={link} title={title} />
-        ))}
+        <li>
+          {links.map(({ id, link, title }) => (
+            <Link key={id} link={link} title={title} />
+          ))}
+        </li>
       </LinksList>
     </Container>
   );

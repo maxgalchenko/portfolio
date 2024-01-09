@@ -33,7 +33,7 @@ const Spinner = ({ animationDuration, animationDirection }: Props) => {
 
   return (
     <InnerElementStyled style={innerSpring}>
-      <img src={spinner} alt="spinner" />
+      <img src={spinner} alt="" />
     </InnerElementStyled>
   );
 };

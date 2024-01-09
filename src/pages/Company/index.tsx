@@ -263,7 +263,7 @@ const CompanyPage = ({
           </LeftContent>
           <RightContent>
             <ImgContainer style={imgSpring}>
-              <img src={indexPageImg} alt="Company logo" />
+              <img src={indexPageImg} alt="" />
             </ImgContainer>
             <BackToHomePageContainer>
               <BackToHomePage />
