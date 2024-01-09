@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
 import { Link } from 'react-router-dom';
 
-const Container = styled(a.li)``;
-
 const LinkStyled = styled(Link)`
   ${({ theme }) => theme.flex.between};
 
@@ -86,7 +84,7 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
   });
 
   return (
-    <Container
+    <a.div
       style={companySpring}
       onMouseEnter={() => {
         titleHoverSpring.x.start({ to: '3vw' });
@@ -94,7 +92,7 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
         imgSpring.height.start({ to: theme.vw.d(200) });
       }}
       onMouseLeave={() => {
-        titleHoverSpring.x.start({ to: "0vw" });
+        titleHoverSpring.x.start({ to: '0vw' });
         imgSpring.opacity.start({ to: 0 });
         imgSpring.height.start({ to: theme.vw.d(100) });
       }}
@@ -102,10 +100,10 @@ const Company = ({ projectName, link, imgSrc, runAnimation }: Props) => {
       <LinkStyled to={link}>
         <Title style={titleHoverSpring}>{projectName}</Title>
         <ImageContainer>
-          <Image style={imgSpring} src={imgSrc} alt='' />
+          <Image style={imgSpring} src={imgSrc} alt="" />
         </ImageContainer>
       </LinkStyled>
-    </Container>
+    </a.div>
   );
 };
 
