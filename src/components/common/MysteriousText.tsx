@@ -1,4 +1,9 @@
+import styled from '@emotion/styled';
 import { a, useSpring } from '@react-spring/web';
+
+const Container = styled.p`
+  text-align: justify;
+`;
 
 type Props = {
   children: string;
@@ -11,14 +16,14 @@ const MysteriousText = ({ children, ...props }: Props) => {
 
   //   @ts-ignore
   return (
-    <>
+    <Container>
       {children.split('').map((item, index) => (
         // @ts-ignore
         <a.span key={index} style={{ ...animation(index), color: 'white' }} {...props}>
           {item}
         </a.span>
       ))}
-    </>
+    </Container>
   );
 };
 
