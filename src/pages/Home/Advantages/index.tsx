@@ -7,12 +7,12 @@ const Container = styled.ul`
 
   ${({ theme }) => theme.media.d} {
     gap: ${({ theme }) => theme.vw.d(150)};
-    margin-bottom: ${({ theme }) => theme.vw.d(200)};
+    margin-bottom: ${({ theme }) => theme.vw.d(100)};
   }
 
   ${({ theme }) => theme.media.m} {
     gap: ${({ theme }) => theme.vw.m(40)};
-    margin-bottom: ${({ theme }) => theme.vw.m(150)};
+    margin-bottom: ${({ theme }) => theme.vw.m(110)};
   }
 `;
 

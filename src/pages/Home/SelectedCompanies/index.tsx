@@ -60,12 +60,12 @@ const SelectedCompanies = () => {
   const [ref, inView] = useInView(
     () => ({
       config: config.molasses,
-      from: { y: '100%' },
+      from: { y: '120%' },
       to: { y: '0%' },
     }),
     {
       once: true,
-      rootMargin: '-30% 0%',
+      rootMargin: '-20% 0%',
     }
   );
 

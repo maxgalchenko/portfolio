@@ -25,7 +25,6 @@ const Title = styled(a.p)`
   }
 `;
 
-// Todo update favicon
 // Todo add cool cursor?
 
 type Props = {
