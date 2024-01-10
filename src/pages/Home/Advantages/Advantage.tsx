@@ -20,7 +20,7 @@ const Title = styled(a.p)`
   }
 
   ${({ theme }) => theme.media.m} {
-    font-size: ${({ theme }) => theme.vw.m(38)};
+    font-size: ${({ theme }) => theme.vw.m(36)};
     width: 100%;
   }
 `;
