@@ -10,6 +10,7 @@ import BackToHomePage from '../../components/common/BackToHomePage';
 import Link from '../../components/common/Link';
 import MysteriousText from '../../components/common/MysteriousText';
 import PageContainer from '../../components/common/PageContainer';
+import { useBreakpoint } from '../../hooks/useBreakpoint';
 
 const MainStyled = styled.main`
   ${({ theme }) => theme.media.d} {
@@ -86,7 +87,7 @@ const AboutCompany = styled(a.div)`
 
 const GoToWebsite = styled(a.div)`
   ${({ theme }) => theme.media.m} {
-    margin-bottom: ${({ theme }) => theme.vw.m(40)};
+    margin-bottom: ${({ theme }) => theme.vw.m(20)};
   }
 `;
 
@@ -157,7 +158,9 @@ const BackToHomePageContainer = styled.div`
     transform: translateX(${({ theme }) => theme.vw.d(-150)});
   }
 
- 
+  ${({ theme }) => theme.media.m} {
+    margin-top: ${({ theme }) => theme.vw.m(40)};
+  }
 `;
 
 // !Todo mouse pointer animation?
@@ -173,6 +176,7 @@ type Props = {
   indexPageImg: string;
   linkToWebsite: string;
   companyDescription: string;
+  nextProjectLink: string;
 };
 
 const CompanyPage = ({
@@ -186,8 +190,10 @@ const CompanyPage = ({
   indexPageImg,
   linkToWebsite,
   companyDescription,
+  nextProjectLink,
 }: Props) => {
   const theme = useTheme();
+  const isMobile = useBreakpoint();
   const tagsData = [
     {
       icon: <MdLocationOn />,
@@ -228,8 +234,8 @@ const CompanyPage = ({
 
   const imgSpring = useSpring({
     config: config.molasses,
-    from: { y: '100%', opacity: 0 },
-    to: { y: '0%', opacity: 1 },
+    from: { opacity: 0 },
+    to: { opacity: 1 },
     delay: 500,
   });
 
@@ -257,14 +263,31 @@ const CompanyPage = ({
             <AboutCompany>
               <MysteriousText>{companyDescription}</MysteriousText>
             </AboutCompany>
-            <GoToWebsite style={linkSpring}>
-              <Link link={linkToWebsite} title="Go to website" />
-            </GoToWebsite>
+            {!isMobile && (
+              <GoToWebsite style={linkSpring}>
+                <Link link={linkToWebsite} title="Go to website" />
+              </GoToWebsite>
+            )}
+            {!isMobile && (
+              <GoToWebsite style={linkSpring}>
+                <Link sameOrigin link={nextProjectLink} title="Next project" />
+              </GoToWebsite>
+            )}
           </LeftContent>
           <RightContent>
             <ImgContainer style={imgSpring}>
               <img src={indexPageImg} alt="" />
             </ImgContainer>
+            {isMobile && (
+              <GoToWebsite style={linkSpring}>
+                <Link link={linkToWebsite} title="Go to website" />
+              </GoToWebsite>
+            )}
+            {isMobile && (
+              <GoToWebsite style={linkSpring}>
+                <Link sameOrigin link={nextProjectLink} title="Next project" />
+              </GoToWebsite>
+            )}
             <BackToHomePageContainer>
               <BackToHomePage />
             </BackToHomePageContainer>

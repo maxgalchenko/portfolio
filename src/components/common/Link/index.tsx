@@ -2,8 +2,32 @@ import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
 import { useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
+import { Link as RouterLink } from 'react-router-dom';
 
 const LinkStyled = styled.a`
+  line-height: 1.5;
+  color: ${({ theme }) => theme.color.white};
+  ${({ theme }) => theme.flex.between};
+  position: relative;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  ${({ theme }) => theme.media.d} {
+    width: ${({ theme }) => theme.vw.d(250)};
+    font-size: ${({ theme }) => theme.vw.d(24)};
+  }
+
+  ${({ theme }) => theme.media.m} {
+    width: ${({ theme }) => theme.vw.m(250)};
+    font-size: ${({ theme }) => theme.vw.m(20)};
+    width: 100%;
+  }
+`;
+
+const SameOriginLink = styled(RouterLink)`
   line-height: 1.5;
   color: ${({ theme }) => theme.color.white};
   ${({ theme }) => theme.flex.between};
@@ -51,9 +75,10 @@ const BorderBottom = styled(a.div)`
 type Props = {
   link: string;
   title: string;
+  sameOrigin?: boolean;
 };
 
-const Link = ({ link, title }: Props) => {
+const Link = ({ link, title, sameOrigin = false }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverSpring = useSpring({
@@ -64,19 +89,29 @@ const Link = ({ link, title }: Props) => {
 
   return (
     <li>
-      <LinkStyled
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <p>{title}</p>
-        <ArrowRightContainer>
-          <GoArrowUpRight size={10} />
-        </ArrowRightContainer>
-        <BorderBottom style={hoverSpring} />
-      </LinkStyled>
+      {sameOrigin ? (
+        <SameOriginLink to={link}>
+          <p>{title}</p>
+          <ArrowRightContainer>
+            <GoArrowUpRight size={10} />
+          </ArrowRightContainer>
+          <BorderBottom style={hoverSpring} />
+        </SameOriginLink>
+      ) : (
+        <LinkStyled
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <p>{title}</p>
+          <ArrowRightContainer>
+            <GoArrowUpRight size={10} />
+          </ArrowRightContainer>
+          <BorderBottom style={hoverSpring} />
+        </LinkStyled>
+      )}
     </li>
   );
 };
