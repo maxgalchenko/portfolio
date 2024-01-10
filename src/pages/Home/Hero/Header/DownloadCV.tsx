@@ -2,6 +2,7 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
 import { useState } from 'react';
+import { useBreakpoint } from '../../../../hooks/useBreakpoint';
 
 const DownloadLink = styled(a.a)`
   color: ${({ theme }) => theme.color.white};
@@ -20,8 +21,6 @@ const DownloadLink = styled(a.a)`
   ${({ theme }) => theme.media.m} {
     font-size: ${({ theme }) => theme.vw.m(14)};
     padding: ${({ theme }) => `${theme.vw.m(10)} ${theme.vw.m(40)}`};
-    color: ${({ theme }) => theme.color.white} !important;
-    background-color: transparent !important;
   }
 `;
 
@@ -32,6 +31,8 @@ type Props = {
 
 const DownloadCV = ({ format, href }: Props) => {
   const theme = useTheme();
+  const isMobile = useBreakpoint();
+  console.log(isMobile);
   const [isHovered, setIsHovered] = useState(false);
 
   const linkHoverSpring = useSpring({
@@ -47,7 +48,7 @@ const DownloadCV = ({ format, href }: Props) => {
     <DownloadLink
       onMouseLeave={() => setIsHovered(false)}
       onMouseEnter={() => setIsHovered(true)}
-      style={linkHoverSpring}
+      style={isMobile ? {} : linkHoverSpring}
       href={href}
       download
     >

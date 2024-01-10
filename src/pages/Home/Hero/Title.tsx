@@ -11,7 +11,7 @@ const TitleStyled = styled.h1`
 
 const WordStyled = styled(a.span)`
   color: ${({ theme }) => theme.color.white};
-  line-height: 0.9;
+  line-height: 1;
   text-transform: uppercase;
   position: relative;
   display: inline-block;

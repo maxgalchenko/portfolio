@@ -5,6 +5,7 @@ import mrkterPage from './assets/companyIndexPages/mrkter.webp';
 import upworkPage from './assets/companyIndexPages/upwork.webp';
 import zipsalePage from './assets/companyIndexPages/zipsale.webp';
 import PageTransition from './components/common/PageTransition';
+import { BreakpointProvider } from './hooks/useBreakpoint';
 import Company from './pages/Company';
 import Home from './pages/Home';
 import EmotionTheme from './theme/EmotionTheme';
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
           indexPageImg={conexiomPage}
           linkToWebsite="https://conexiom.com/"
           companyDescription="I currently lead the design and implementation of web applications and micro frontend, prioritizing software quality through Test-Driven Development (TDD). Additionally, I'm dedicated to creating comprehensive documentation for software processes and closely collaborating with cross-functional teams to ensure seamless system integration. At the same time, I provide leadership and direction as the head of the frontend department. Notably, my significant contributions continue at Conexiom, where I'm instrumental in automating manual data entry processes for leading global companies, revolutionizing their sales order processing from manual to automated systems. This ongoing experience continues to showcase my adeptness at merging technical innovation with impactful solutions."
+          
         />
       </PageTransition>
     ),
@@ -124,7 +126,9 @@ const App = () => {
       <GlobalStyles />
 
       <EmotionTheme>
-        <RouterProvider router={router} />
+        <BreakpointProvider>
+          <RouterProvider router={router} />
+        </BreakpointProvider>
       </EmotionTheme>
     </>
   );

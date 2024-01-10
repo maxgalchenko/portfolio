@@ -47,19 +47,6 @@ const links = [
   },
 ];
 
-const links2 = [
-  {
-    id: 1,
-    title: 'All experience',
-    link: 'https://www.linkedin.com/in/galchenko-max/',
-  },
-  {
-    id: 2,
-    title: 'My certifications',
-    link: 'https://www.linkedin.com/in/galchenko-max/',
-  },
-];
-
 const MyLinks = () => {
   const [ref, inView] = useInView(
     () => ({
@@ -76,14 +63,9 @@ const MyLinks = () => {
   return (
     <Container>
       <LinksList ref={ref} style={inView}>
-          {links2.map(({ id, link, title }) => (
-            <Link key={id} link={link} title={title} />
-          ))}
-      </LinksList>
-      <LinksList ref={ref} style={inView}>
-          {links.map(({ id, link, title }) => (
-            <Link key={id} link={link} title={title} />
-          ))}
+        {links.map(({ id, link, title }) => (
+          <Link key={id} link={link} title={title} />
+        ))}
       </LinksList>
     </Container>
   );

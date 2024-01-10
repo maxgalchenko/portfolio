@@ -22,7 +22,7 @@ const TitleContainer = styled.div`
   ${({ theme }) => theme.media.m} {
     gap: ${({ theme }) => theme.vw.m(20)};
     margin-bottom: ${({ theme }) => theme.vw.m(30)};
-    height: ${({ theme }) => theme.vw.m(23)};
+    height: ${({ theme }) => theme.vw.m(25)};
   }
 `;
 

@@ -2,6 +2,7 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { a, config, useSpring } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
+import { useBreakpoint } from '../../../hooks/useBreakpoint';
 
 const Title = styled(a.p)`
   line-height: 1.2;
@@ -34,6 +35,7 @@ type Props = {
 const Advantage = ({ title }: Props) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const theme = useTheme();
+  const isMobile = useBreakpoint();
 
   const [isInView, setInView] = useState(false);
   const spring = useSpring({
@@ -45,8 +47,13 @@ const Advantage = ({ title }: Props) => {
     const element = ref.current;
     if (element) {
       const { top } = element.getBoundingClientRect();
-      if (parseInt(theme.vw.d(top)) < parseInt(theme.vw.d(400))) setInView(true);
-      else setInView(false);
+      if (isMobile) {
+        if (parseInt(theme.vw.d(top)) < parseInt(theme.vw.d(400))) setInView(true);
+        else setInView(false);
+      } else {
+        if (parseInt(theme.vw.m(top)) < parseInt(theme.vw.m(700))) setInView(true);
+        else setInView(false);
+      }
     }
   };
 

@@ -13,7 +13,7 @@ const Container = styled.div`
   }
 
   ${({ theme }) => theme.media.m} {
-    padding: ${({ theme }) => `0 ${theme.vw.m(30)} ${theme.vw.m(80)} ${theme.vw.m(30)}`};
+    padding: ${({ theme }) => `0 ${theme.vw.m(30)} ${theme.vw.m(130)} ${theme.vw.m(30)}`};
   }
 `;
 
