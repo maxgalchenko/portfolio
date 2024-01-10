@@ -20,6 +20,8 @@ const DownloadLink = styled(a.a)`
   ${({ theme }) => theme.media.m} {
     font-size: ${({ theme }) => theme.vw.m(14)};
     padding: ${({ theme }) => `${theme.vw.m(10)} ${theme.vw.m(40)}`};
+    color: ${({ theme }) => theme.color.white} !important;
+    background-color: transparent !important;
   }
 `;
 

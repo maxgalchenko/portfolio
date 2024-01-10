@@ -51,12 +51,12 @@ const links2 = [
   {
     id: 1,
     title: 'All experience',
-    link: 'https://www.linkedin.com/in/galchenko-max/details/experience/',
+    link: 'https://www.linkedin.com/in/galchenko-max/',
   },
   {
     id: 2,
-    title: 'Certifications',
-    link: 'https://www.linkedin.com/in/galchenko-max/details/certifications/',
+    title: 'My certifications',
+    link: 'https://www.linkedin.com/in/galchenko-max/',
   },
 ];
 
