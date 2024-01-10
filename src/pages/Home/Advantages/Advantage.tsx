@@ -47,7 +47,7 @@ const Advantage = ({ title }: Props) => {
     const element = ref.current;
     if (element) {
       const { top } = element.getBoundingClientRect();
-      if (isMobile) {
+      if (!isMobile) {
         if (parseInt(theme.vw.d(top)) < parseInt(theme.vw.d(400))) setInView(true);
         else setInView(false);
       } else {
