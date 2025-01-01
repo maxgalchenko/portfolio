@@ -60,8 +60,9 @@ const SelectedCompanies = () => {
   const [ref, inView] = useInView(
     () => ({
       config: config.molasses,
-      from: { y: '100%' },
+      from: { y: '200%' },
       to: { y: '0%' },
+      reset: true,
     }),
     {
       once: true,
@@ -78,13 +79,11 @@ const SelectedCompanies = () => {
 
   return (
     <Container>
-      <TitleContainer>
+      <TitleContainer ref={ref}>
         <SpinnerContainer style={spinnerSpring}>
           <Spinner animationDuration={5000} animationDirection="forward" />
         </SpinnerContainer>
-        <Title ref={ref} style={inView}>
-          Selected Companies
-        </Title>
+        <Title style={inView}>Selected Companies</Title>
       </TitleContainer>
       <CompaniesList />
     </Container>

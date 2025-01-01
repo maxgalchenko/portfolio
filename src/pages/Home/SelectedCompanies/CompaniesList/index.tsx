@@ -3,6 +3,7 @@ import { a, useInView } from '@react-spring/web';
 import Company from './Company';
 import Separator from './Separator';
 import conexiomImg from './assets/conexiom.webp';
+import keela from './assets/keela.webp';
 import magnificodeImg from './assets/magnificode.webp';
 import mrkterImg from './assets/mrkter.webp';
 import upworkImg from './assets/upwork.webp';
@@ -19,6 +20,12 @@ const Container = styled(a.ul)`
 `;
 
 const companies = [
+  {
+    id: 0,
+    projectName: 'Keela',
+    link: '/keela',
+    imgSrc: keela,
+  },
   {
     id: 1,
     projectName: 'Conexiom',

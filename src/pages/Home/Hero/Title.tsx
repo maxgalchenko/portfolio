@@ -30,7 +30,7 @@ const BottomWordContainerStyled = styled(WordStyled)`
   overflow: hidden;
 
   ${({ theme }) => theme.media.d} {
-    max-height: ${({ theme }) => theme.vw.d(140)};
+    max-height: ${({ theme }) => theme.vw.d(150)};
   }
 
   ${({ theme }) => theme.media.m} {

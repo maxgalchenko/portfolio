@@ -4,6 +4,7 @@ import magnificodePage from './assets/companyIndexPages/magnificode.webp';
 import mrkterPage from './assets/companyIndexPages/mrkter.webp';
 import upworkPage from './assets/companyIndexPages/upwork.webp';
 import zipsalePage from './assets/companyIndexPages/zipsale.webp';
+import keelaPage from './assets/companyIndexPages/keela.webp';
 import PageTransition from './components/common/PageTransition';
 import { BreakpointProvider } from './hooks/useBreakpoint';
 import Company from './pages/Company';
@@ -23,6 +24,26 @@ const router = createBrowserRouter([
     errorElement: <div>Error</div>,
   },
   {
+    path: 'keela',
+    element: (
+      <PageTransition>
+        <Company
+          companyName="Keela"
+          location="Canada"
+          employees="201-500"
+          remote="Remote"
+          fromTo="May 2024 - Present"
+          workType="Full-time"
+          code="CA"
+          indexPageImg={keelaPage}
+          linkToWebsite="https://www.keela.co/"
+          companyDescription="I spearhead the development of ARK, a unified platform integrating Aplos, Keela, and Raisely to streamline nonprofit management. My work focuses on building a scalable Design System, modernizing legacy infrastructure with micro frontends, and transitioning to modular architectures using the latest React practices. With a strong track record in leading teams and meeting deadlines, I excel at planning, scheduling, and delivering projects. I bridge technical and non-technical stakeholders by translating complex concepts into actionable insights and drive team alignment through sprint planning, backlog management, and roadmap prioritization."
+          nextProjectLink="/conexiom"
+        />
+      </PageTransition>
+    ),
+  },
+  {
     path: 'conexiom',
     element: (
       <PageTransition>
@@ -31,12 +52,12 @@ const router = createBrowserRouter([
           location="Canada"
           employees="201-500"
           remote="Hybrid"
-          fromTo="Apr 2023 - Present"
+          fromTo="Apr 2023 - May 2024"
           workType="Full-time"
           code="CA"
           indexPageImg={conexiomPage}
           linkToWebsite="https://conexiom.com/"
-          companyDescription="I currently lead the design and implementation of web applications and micro frontend, prioritizing software quality through Test-Driven Development (TDD). Additionally, I'm dedicated to creating comprehensive documentation for software processes and closely collaborating with cross-functional teams to ensure seamless system integration. At the same time, I provide leadership and direction as the head of the frontend department. Notably, my significant contributions continue at Conexiom, where I'm instrumental in automating manual data entry processes for leading global companies, revolutionizing their sales order processing from manual to automated systems. This ongoing experience continues to showcase my adeptness at merging technical innovation with impactful solutions."
+          companyDescription="I previously led the design and implementation of web applications and micro frontends, with a strong focus on software quality through Test-Driven Development (TDD). I was committed to creating comprehensive documentation for software processes and worked closely with cross-functional teams to ensure seamless system integration. Additionally, I provided leadership and direction as the head of the frontend department.Notably, during my time at Conexiom, I played a pivotal role in automating manual data entry processes for leading global companies, transforming their sales order processing from manual to automated systems. This experience highlighted my ability to merge technical innovation with impactful solutions, leaving a lasting contribution to the organization’s success."
           nextProjectLink="/mrkter"
         />
       </PageTransition>
