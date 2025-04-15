@@ -93,8 +93,8 @@ const TopNav = () => {
 
       <CVContainer style={props}>
         <Title>Download CV:</Title>
-        <DownloadCV format=".pdf" href="/Maksym Galchenko Resume.docx.pdf" />
-        <DownloadCV format=".docx" href="/Maksym Galchenko Resume.docx" />
+        <DownloadCV format=".pdf" href="/Max_Senior_Frontend_Engineer_React_Resume.pdf" />
+        <DownloadCV format=".docx" href="/Max_Senior_Frontend_Engineer_React_Resume.docx" />
       </CVContainer>
     </StyledNav>
   );
