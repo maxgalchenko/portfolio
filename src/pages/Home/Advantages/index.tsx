@@ -17,15 +17,14 @@ const Container = styled.ul`
 `;
 
 const advantages = [
-  'Frontend Focused',
-  'Business-Centric Approach',
-  'Leadership and Team Collaboration',
-  'Expertise in Responsiveness and Accessibility',
-  'Optimization Proficiency',
-  'SEO Integration',
-  'Agile Mastery',
-  'Accessibility Advocacy',
-  'Innovative Problem-Solving',
+  'Scalable Front-End Architecture',
+  'Product-Driven Engineering',
+  'Technical Leadership & Mentorship',
+  'Champion for Web Accessibility (WCAG)',
+  'Expert in Performance Optimization',
+  'Driving Quality with TDD & CI/CD',
+  'Disciplined & Analytical Problem-Solving',
+  'Proven Reliability & Client Success',
 ];
 
 const Advantages = () => {
