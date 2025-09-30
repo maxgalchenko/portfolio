@@ -27,6 +27,7 @@ A personal portfolio website built with React and TypeScript. It highlights sele
 Make sure you have the following installed on your system:
 
 - **Node.js**: `18.17.0` or higher
+- **Yarn**: `1.22.0` or higher
 
 ![Feature 1](src/assets/project_screenshot.png)
 
