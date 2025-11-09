@@ -38,7 +38,7 @@ const links = [
   {
     id: 2,
     title: 'GitHub',
-    link: 'https://github.com/Rainspistols',
+    link: 'https://github.com/maxgalchenko',
   },
   {
     id: 3,
