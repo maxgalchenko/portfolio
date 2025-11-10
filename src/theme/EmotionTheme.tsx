@@ -38,3 +38,4 @@ const EmotionTheme = ({ children }: { children: ReactElement }) => (
 );
 
 export default EmotionTheme;
+export { theme };

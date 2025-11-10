@@ -1,0 +1,31 @@
+{
+  "testFramework": "vitest",
+  "testLibrary": "@testing-library/react",
+  "coverage": {
+    "provider": "v8",
+    "thresholds": {
+      "lines": 70,
+      "functions": 70,
+      "branches": 45,
+      "statements": 70
+    },
+    "current": {
+      "lines": 70.12,
+      "functions": 72.33,
+      "branches": 50.88,
+      "statements": 70.07
+    }
+  },
+  "stats": {
+    "totalTests": 132,
+    "testFiles": 24,
+    "passingTests": 132,
+    "failingTests": 0
+  },
+  "commands": {
+    "test": "npm test",
+    "testWatch": "npm run test:watch",
+    "testCoverage": "npm run test:coverage",
+    "testUI": "npm run test:ui"
+  }
+}
