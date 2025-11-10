@@ -51,7 +51,7 @@ describe('Title', () => {
   });
 
   it('should set up interval for changing text', () => {
-    const setIntervalSpy = vi.spyOn(global, 'setInterval');
+    const setIntervalSpy = vi.spyOn(globalThis, 'setInterval');
     render(<Title />);
 
     // Verify that setInterval was called with correct duration (3500ms)
@@ -66,7 +66,7 @@ describe('Title', () => {
   });
 
   it('should cleanup interval on unmount', () => {
-    const clearIntervalSpy = vi.spyOn(global, 'clearInterval');
+    const clearIntervalSpy = vi.spyOn(globalThis, 'clearInterval');
     const { unmount } = render(<Title />);
 
     unmount();

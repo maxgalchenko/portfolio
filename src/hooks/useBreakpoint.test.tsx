@@ -8,7 +8,7 @@ describe('useBreakpoint', () => {
 
   beforeEach(() => {
     matchMediaMock = vi.fn();
-    window.matchMedia = matchMediaMock;
+    window.matchMedia = matchMediaMock as any;
   });
 
   afterEach(() => {

@@ -24,8 +24,10 @@ describe('EmotionTheme', () => {
   it('should render multiple children', () => {
     render(
       <EmotionTheme>
-        <div data-testid="child1">Child 1</div>
-        <div data-testid="child2">Child 2</div>
+        <>
+          <div data-testid="child1">Child 1</div>
+          <div data-testid="child2">Child 2</div>
+        </>
       </EmotionTheme>
     );
     expect(screen.getByTestId('child1')).toBeInTheDocument();
