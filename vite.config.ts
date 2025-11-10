@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     svgr(),
   ],
   // Only use base path for production builds (GitHub Pages)
-  base: mode === 'production' ? '/portfolio' : '/',
+  base: mode === 'production' ? '/portfolio/' : '/',
   server: {
     port: 3000,
     open: true,
