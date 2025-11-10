@@ -25,4 +25,5 @@ export default defineConfig({
     setupFiles: './src/setupTests.ts',
     css: true,
   },
+  base: "/Portfolio"
 });
