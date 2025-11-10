@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 const BreakpointContext = createContext(false);
 
-const BreakpointProvider = ({ children }: { children: JSX.Element }) => {
+const BreakpointProvider = ({ children }: { children: ReactNode }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

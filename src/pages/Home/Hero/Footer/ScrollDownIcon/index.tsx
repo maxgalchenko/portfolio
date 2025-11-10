@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { a, useSpring } from '@react-spring/web';
 import Spinner from '../../../../../components/common/Spinner';
-import { ReactComponent as RoundText } from './roundText.svg';
+import RoundText from './roundText.svg?react';
 
 const ContainerStyled = styled.div`
   position: relative;
