@@ -32,7 +32,6 @@ type Props = {
 const DownloadCV = ({ format, href }: Props) => {
   const theme = useTheme();
   const isMobile = useBreakpoint();
-  console.log(isMobile);
   const [isHovered, setIsHovered] = useState(false);
 
   const linkHoverSpring = useSpring({
