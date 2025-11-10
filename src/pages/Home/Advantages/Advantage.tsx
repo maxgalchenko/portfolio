@@ -6,7 +6,11 @@ import { useBreakpoint } from '../../../hooks/useBreakpoint';
 
 const Title = styled(a.p)`
   line-height: 1.2;
-  background: linear-gradient(to right, rgb(255, 255, 255) 50%, rgb(37, 37, 37) 50%);
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 50%,
+    rgb(37, 37, 37) 50%
+  );
   color: transparent;
   text-transform: uppercase;
   font-weight: 700;
@@ -48,10 +52,12 @@ const Advantage = ({ title }: Props) => {
     if (element) {
       const { top } = element.getBoundingClientRect();
       if (!isMobile) {
-        if (parseInt(theme.vw.d(top)) < parseInt(theme.vw.d(400))) setInView(true);
+        if (parseInt(theme.vw.d(top)) < parseInt(theme.vw.d(400)))
+          setInView(true);
         else setInView(false);
       } else {
-        if (parseInt(theme.vw.m(top)) < parseInt(theme.vw.m(700))) setInView(true);
+        if (parseInt(theme.vw.m(top)) < parseInt(theme.vw.m(700)))
+          setInView(true);
         else setInView(false);
       }
     }

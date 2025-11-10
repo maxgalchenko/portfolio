@@ -14,6 +14,7 @@ A personal portfolio website showcasing professional work experience across mult
 - CV download functionality (PDF/DOCX formats)
 - Direct links to professional profiles and contact information
 - Accessible UI with semantic HTML and keyboard navigation support
+- **Code Quality Tools**: ESLint, Prettier, and Husky pre-commit hooks ensure consistent code quality
 
 ## Tech Stack
 
@@ -22,6 +23,26 @@ React 19, TypeScript 5.7, Vite 6, Emotion CSS-in-JS, React Router v7, React Spri
 ## Architecture
 
 Built with Vite for blazing-fast development and optimized production builds. Uses React Router v7 for client-side routing with enhanced features. Emotion provides CSS-in-JS styling with a centralized theme system. Custom hooks for breakpoint detection enable responsive behavior. Page transitions implemented with React Spring v10 animations. Component structure organized by pages and common reusable components. Vitest for modern, fast unit testing.
+
+## Code Quality & Developer Experience
+
+This project includes a comprehensive code quality setup to ensure consistent, error-free code:
+
+- **ESLint 9**: Modern linting with flat config for TypeScript and React 19
+- **Prettier**: Automatic code formatting for consistent style
+- **Husky**: Git hooks that automatically run checks before commits
+- **lint-staged**: Only lint and format files that are being committed (fast!)
+- **TypeScript**: Full type checking to catch errors at compile time
+
+### Pre-commit Hooks
+
+Every commit automatically runs:
+
+- ✨ **ESLint** with auto-fix on staged TypeScript/React files
+- 💅 **Prettier** formatting on staged files
+- 🎯 Only processes changed files (typically completes in 2-5 seconds)
+
+This ensures all committed code is properly formatted and free of common errors without slowing down your workflow.
 
 ## Performance & Accessibility
 
@@ -52,11 +73,24 @@ Open <http://localhost:3000>
 
 ## Available Scripts
 
+### Development
+
 - `npm run dev` – Start Vite development server with HMR
 - `npm run build` – Create optimized production build
 - `npm run preview` – Preview production build locally
+
+### Testing
+
 - `npm run test` – Run Vitest test suite
 - `npm run test:ui` – Run tests with Vitest UI
+
+### Code Quality
+
+- `npm run lint` – Run ESLint to check for code issues
+- `npm run lint:fix` – Run ESLint and automatically fix issues
+- `npm run format` – Format code with Prettier
+- `npm run format:check` – Check if code is formatted correctly
+- `npm run type-check` – Run TypeScript type checking without emitting files
 
 ## Recent Updates
 
@@ -70,6 +104,8 @@ Open <http://localhost:3000>
 - 🎨 **React Spring v10**: Updated animation library with React 19 support
 - 🧪 **Vitest**: Modern, fast testing framework replacing Jest
 - 📘 **TypeScript 5.7**: Latest TypeScript with improved type checking
+- ✨ **ESLint 9 + Prettier**: Automatic code quality and formatting
+- 🪝 **Husky + lint-staged**: Fast pre-commit hooks for consistent code
 
 ## Screenshots
 

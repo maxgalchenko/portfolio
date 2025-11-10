@@ -11,8 +11,17 @@ const GlobalStyles = () => (
         padding: 0;
         background: white;
         min-height: 100%;
-        font-family: '.SF NS', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-          Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        font-family:
+          '.SF NS',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen-Sans,
+          Ubuntu,
+          Cantarell,
+          'Helvetica Neue',
+          sans-serif;
       }
 
       img {

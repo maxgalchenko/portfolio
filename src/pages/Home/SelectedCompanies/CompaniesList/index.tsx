@@ -70,7 +70,12 @@ const CompaniesList = () => {
       <Container ref={ref}>
         {companies.map(({ id, projectName, link, imgSrc }) => (
           <li key={id}>
-            <Company projectName={projectName} link={link} imgSrc={imgSrc} runAnimation={inView} />
+            <Company
+              projectName={projectName}
+              link={link}
+              imgSrc={imgSrc}
+              runAnimation={inView}
+            />
             <Separator runAnimation={inView} />
           </li>
         ))}

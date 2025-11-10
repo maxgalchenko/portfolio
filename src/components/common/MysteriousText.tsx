@@ -7,13 +7,20 @@ type Props = {
 const MysteriousText = ({ children, ...props }: Props) => {
   const animation = () =>
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useSpring({ opacity: 1, from: { opacity: 0 }, delay: Math.random() * 2500 });
+    useSpring({
+      opacity: 1,
+      from: { opacity: 0 },
+      delay: Math.random() * 2500,
+    });
 
   return (
     <p>
       {children.split('').map((item, index) => (
-        // @ts-ignore
-        <a.span key={index} style={{ ...animation(index), color: 'white' }} {...props}>
+        <a.span
+          key={index}
+          style={{ ...animation(), color: 'white' }}
+          {...props}
+        >
           {item}
         </a.span>
       ))}

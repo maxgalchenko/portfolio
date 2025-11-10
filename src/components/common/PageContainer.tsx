@@ -9,11 +9,13 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.color.black2};
 
   ${({ theme }) => theme.media.d} {
-    padding: ${({ theme }) => `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
+    padding: ${({ theme }) =>
+      `0 ${theme.vw.d(80)} ${theme.vw.d(200)} ${theme.vw.d(80)}`};
   }
 
   ${({ theme }) => theme.media.m} {
-    padding: ${({ theme }) => `0 ${theme.vw.m(30)} ${theme.vw.m(130)} ${theme.vw.m(30)}`};
+    padding: ${({ theme }) =>
+      `0 ${theme.vw.m(30)} ${theme.vw.m(130)} ${theme.vw.m(30)}`};
   }
 `;
 

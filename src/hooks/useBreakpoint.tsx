@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react';
 
 const BreakpointContext = createContext(false);
 
@@ -18,7 +24,11 @@ const BreakpointProvider = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
-  return <BreakpointContext.Provider value={isMobile}>{children}</BreakpointContext.Provider>;
+  return (
+    <BreakpointContext.Provider value={isMobile}>
+      {children}
+    </BreakpointContext.Provider>
+  );
 };
 
 const useBreakpoint = () => {
