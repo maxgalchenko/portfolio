@@ -1,6 +1,6 @@
 {
-  "name": "web-portfolio",
-  "homepage": "https://maxgalchenko.github.io/Portfolio",
+  "name": "portfolio",
+  "homepage": "https://maxgalchenko.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
