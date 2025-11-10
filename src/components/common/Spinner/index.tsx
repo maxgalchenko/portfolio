@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import spinner from './spinner.svg';
 
 import { a, useSpring } from '@react-spring/web';
+import { useState, useEffect } from 'react';
 
 const InnerElementStyled = styled(a.div)`
   width: 100%;
@@ -23,12 +24,19 @@ type Props = {
 };
 
 const Spinner = ({ animationDuration, animationDirection }: Props) => {
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHasStarted(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const innerSpring = useSpring({
     from: { rotate: animationDirection === 'forward' ? 0 : 360 },
     to: { rotate: animationDirection === 'forward' ? 360 : 0 },
     loop: true,
     config: { duration: animationDuration },
-    delay: 1000,
+    pause: !hasStarted,
   });
 
   return (

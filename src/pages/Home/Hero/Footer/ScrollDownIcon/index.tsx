@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { a, useSpring } from '@react-spring/web';
+import { useState, useEffect } from 'react';
 import Spinner from '../../../../../components/common/Spinner';
 import RoundText from './roundText.svg?react';
 
@@ -37,12 +38,19 @@ const InnerElementStyled = styled.div`
 `;
 
 const ScrollDownIcon = () => {
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHasStarted(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const outerSpring = useSpring({
     from: { rotate: 0 },
     to: { rotate: 360 },
     loop: true,
     config: { duration: 15000 },
-    delay: 1000,
+    pause: !hasStarted,
   });
 
   return (
