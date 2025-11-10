@@ -28,8 +28,8 @@ const theme: Theme = {
   },
 
   media: {
-    d: '@media (min-width: 1024px)',
-    m: '@media (max-width: 1023px)',
+    d: '@media (min-width: 800px)',
+    m: '@media (max-width: 799px)',
   },
 };
 

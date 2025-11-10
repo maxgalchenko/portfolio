@@ -13,7 +13,7 @@ const BreakpointProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia('(max-width: 1023px)').matches);
+      setIsMobile(window.matchMedia('(max-width: 799px)').matches);
     };
 
     handleResize(); // Initial check

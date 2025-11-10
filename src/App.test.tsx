@@ -60,4 +60,17 @@ describe('App', () => {
     render(<App />);
     expect(screen.getByTestId('router-provider')).toBeInTheDocument();
   });
+
+  it('should have skip to main content link', () => {
+    render(<App />);
+    const skipLink = screen.getByText('Skip to main content');
+    expect(skipLink).toBeInTheDocument();
+    expect(skipLink).toHaveAttribute('href', '#main-content');
+  });
+
+  it('skip link should be positioned off-screen by default', () => {
+    render(<App />);
+    const skipLink = screen.getByText('Skip to main content');
+    expect(skipLink).toHaveStyle({ left: '-9999px' });
+  });
 });

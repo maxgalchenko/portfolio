@@ -21,7 +21,7 @@ describe('useBreakpoint', () => {
     <BreakpointProvider>{children}</BreakpointProvider>
   );
 
-  it('should return false when viewport is wider than 1023px', () => {
+  it('should return false when viewport is wider than 799px', () => {
     matchMediaMock.mockImplementation((query: string) => ({
       matches: false,
       media: query,
@@ -37,7 +37,7 @@ describe('useBreakpoint', () => {
     expect(result.current).toBe(false);
   });
 
-  it('should return true when viewport is narrower than or equal to 1023px', () => {
+  it('should return true when viewport is narrower than or equal to 799px', () => {
     matchMediaMock.mockImplementation((query: string) => ({
       matches: true,
       media: query,
@@ -94,7 +94,7 @@ describe('useBreakpoint', () => {
     window.dispatchEvent(new Event('resize'));
 
     await waitFor(() => {
-      expect(matchMediaMock).toHaveBeenCalledWith('(max-width: 1023px)');
+      expect(matchMediaMock).toHaveBeenCalledWith('(max-width: 799px)');
     });
   });
 
