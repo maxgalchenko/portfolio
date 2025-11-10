@@ -8,7 +8,9 @@ describe('useBreakpoint', () => {
 
   beforeEach(() => {
     matchMediaMock = vi.fn();
-    window.matchMedia = matchMediaMock as any;
+    window.matchMedia = matchMediaMock as unknown as (
+      query: string
+    ) => MediaQueryList;
   });
 
   afterEach(() => {
@@ -60,12 +62,12 @@ describe('useBreakpoint', () => {
       onchange: null,
       addListener: vi.fn(),
       removeListener: vi.fn(),
-      addEventListener: vi.fn((event: string, listener: any) => {
+      addEventListener: vi.fn((event: string, listener: EventListener) => {
         if (event === 'resize') {
           listeners.push(listener);
         }
       }),
-      removeEventListener: vi.fn((event: string, listener: any) => {
+      removeEventListener: vi.fn((event: string, listener: EventListener) => {
         if (event === 'resize') {
           listeners = listeners.filter((l) => l !== listener);
         }

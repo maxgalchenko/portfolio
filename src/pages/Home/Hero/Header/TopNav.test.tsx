@@ -1,16 +1,25 @@
 import { render, screen } from '../../../../test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import TopNav from './TopNav';
+import React from 'react';
 
 // Mock react-spring
 vi.mock('@react-spring/web', () => ({
   a: {
-    span: ({ children, style, ...props }: any) => (
+    span: ({
+      children,
+      style,
+      ...props
+    }: React.PropsWithChildren<{ style?: React.CSSProperties }>) => (
       <span style={style} {...props}>
         {children}
       </span>
     ),
-    div: ({ children, style, ...props }: any) => (
+    div: ({
+      children,
+      style,
+      ...props
+    }: React.PropsWithChildren<{ style?: React.CSSProperties }>) => (
       <div style={style} {...props}>
         {children}
       </div>

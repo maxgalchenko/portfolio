@@ -63,7 +63,7 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
 
       // React rules
       'react/react-in-jsx-scope': 'off', // Not needed in React 17+

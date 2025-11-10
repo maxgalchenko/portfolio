@@ -1,11 +1,16 @@
 import { render, screen } from '../../test-utils';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import MysteriousText from './MysteriousText';
+import React from 'react';
 
 // Mock react-spring
 vi.mock('@react-spring/web', () => ({
   a: {
-    span: ({ children, style, ...props }: any) => (
+    span: ({
+      children,
+      style,
+      ...props
+    }: React.PropsWithChildren<{ style?: React.CSSProperties }>) => (
       <span style={style} {...props}>
         {children}
       </span>

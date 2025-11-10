@@ -1,19 +1,29 @@
 import { render, screen } from '../../test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import PageTransition from './PageTransition';
+import React from 'react';
+
+type RenderCallback = (
+  style: Record<string, unknown>,
+  item: React.ReactNode
+) => React.ReactNode;
 
 // Mock react-spring
 vi.mock('@react-spring/web', () => ({
   a: {
-    div: ({ children, style, ...props }: any) => (
+    div: ({
+      children,
+      style,
+      ...props
+    }: React.PropsWithChildren<{ style?: React.CSSProperties }>) => (
       <div style={style} {...props}>
         {children}
       </div>
     ),
   },
-  useTransition: (children: any) => {
+  useTransition: (children: React.ReactNode) => {
     // Return a function that mimics the transitions render prop
-    return (renderCallback: (style: any, item: any) => any) => {
+    return (renderCallback: RenderCallback) => {
       return renderCallback({}, children);
     };
   },

@@ -1,11 +1,16 @@
 import { render } from '../../../test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import Advantage from './Advantage';
+import React from 'react';
 
 // Mock react-spring
 vi.mock('@react-spring/web', () => ({
   a: {
-    p: ({ children, style, ...props }: any) => (
+    p: ({
+      children,
+      style,
+      ...props
+    }: React.PropsWithChildren<{ style?: React.CSSProperties }>) => (
       <p style={style} {...props}>
         {children}
       </p>
