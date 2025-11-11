@@ -82,9 +82,12 @@ const Link = ({ link, title, sameOrigin = false }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverSpring = useSpring({
-    from: { width: '0%' },
-    to: { width: isHovered ? '100%' : '0%' },
-    config: config.stiff,
+    from: { width: '0%', opacity: 0 },
+    to: {
+      width: isHovered ? '100%' : '0%',
+      opacity: isHovered ? 1 : 0,
+    },
+    config: isHovered ? config.stiff : { ...config.stiff, friction: 30 },
   });
 
   return (
