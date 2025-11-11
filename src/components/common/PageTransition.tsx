@@ -9,8 +9,13 @@ const SlideIn = styled(a.div)`
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 9999;
   background-color: ${({ theme }) => theme.color.white};
-  transform: scaleY(0) translateZ(0px);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout style paint;
+  pointer-events: none;
 `;
 
 type Props = {

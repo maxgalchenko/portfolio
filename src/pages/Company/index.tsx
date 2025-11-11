@@ -137,11 +137,16 @@ const RightContent = styled.div`
 
 const ImgContainer = styled(a.div)`
   overflow: hidden;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   img {
     width: 100%;
     height: auto;
     border-radius: ${({ theme }) => theme.vw.d(20)};
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   ${({ theme }) => theme.media.d} {
