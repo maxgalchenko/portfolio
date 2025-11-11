@@ -36,26 +36,28 @@ describe('Advantages', () => {
   it('should render all advantage titles', () => {
     render(<Advantages />);
     expect(
-      screen.getByText('Scalable Front-End Architecture')
-    ).toBeInTheDocument();
-    expect(screen.getByText('Product-Driven Engineering')).toBeInTheDocument();
-    expect(
-      screen.getByText('Technical Leadership & Mentorship')
+      screen.getByText('Micro-Frontend Architecture & Module Federation')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Champion for Web Accessibility (WCAG)')
+      screen.getByText('Design Systems & Component Libraries')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Expert in Performance Optimization')
+      screen.getByText('Enterprise-Scale React & TypeScript')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Driving Quality with TDD & CI/CD')
+      screen.getByText('95+ Lighthouse Scores & Core Web Vitals')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Disciplined & Analytical Problem-Solving')
+      screen.getByText('Technical Leadership & Team Mentorship')
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Proven Reliability & Client Success')
+      screen.getByText('Accessibility-First Development (WCAG)')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Test-Driven Development & CI/CD Pipelines')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Top 3% on Upwork for Client Satisfaction')
     ).toBeInTheDocument();
   });
 });

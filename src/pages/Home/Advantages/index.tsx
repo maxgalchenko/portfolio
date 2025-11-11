@@ -17,21 +17,21 @@ const Container = styled.ul`
 `;
 
 const advantages = [
-  'Scalable Front-End Architecture',
-  'Product-Driven Engineering',
-  'Technical Leadership & Mentorship',
-  'Champion for Web Accessibility (WCAG)',
-  'Expert in Performance Optimization',
-  'Driving Quality with TDD & CI/CD',
-  'Disciplined & Analytical Problem-Solving',
-  'Proven Reliability & Client Success',
+  'Micro-Frontend Architecture & Module Federation',
+  'Design Systems & Component Libraries',
+  'Enterprise-Scale React & TypeScript',
+  '95+ Lighthouse Scores & Core Web Vitals',
+  'Technical Leadership & Team Mentorship',
+  'Accessibility-First Development (WCAG)',
+  'Test-Driven Development & CI/CD Pipelines',
+  'Top 3% on Upwork for Client Satisfaction',
 ];
 
 const Advantages = () => {
   return (
     <Container>
-      {advantages.map((title, index) => (
-        <li key={index}>
+      {advantages.map((title) => (
+        <li key={title}>
           <Advantage title={title} />
         </li>
       ))}
