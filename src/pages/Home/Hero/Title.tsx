@@ -74,18 +74,23 @@ const Title = () => {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
 
   const topWordTrail = useTrail(data[currentItemIndex].topWord.length, {
-    config: { tension: 0, friction: 0 },
+    config: { mass: 5, tension: 2000, friction: 200 },
     from: { y: theme.vw.d(10), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
     reset: true,
-    delay: 1000,
+    keys: data[currentItemIndex].topWord
+      .split('')
+      .map((char, i) => `${currentItemIndex}-top-${i}-${char}`),
   });
 
   const bottomWordTrail = useTrail(data[currentItemIndex].bottomWord.length, {
-    config: { tension: 0, friction: 0 },
+    config: { mass: 5, tension: 2000, friction: 200 },
     from: { y: theme.vw.d(50), opacity: 0 },
     to: { y: theme.vw.d(0), opacity: 1 },
-    delay: 1000,
+    reset: true,
+    keys: data[currentItemIndex].bottomWord
+      .split('')
+      .map((char, i) => `${currentItemIndex}-bottom-${i}-${char}`),
   });
 
   useEffect(() => {
@@ -102,7 +107,10 @@ const Title = () => {
   return (
     <TitleStyled>
       {topWordTrail.map((props, index) => (
-        <WordStyled style={props} key={index}>
+        <WordStyled
+          style={props}
+          key={`${currentItemIndex}-top-${index}-${data[currentItemIndex].topWord[index]}`}
+        >
           {data[currentItemIndex].topWord[index]}
         </WordStyled>
       ))}
@@ -110,7 +118,10 @@ const Title = () => {
       <SpaceStyled />
       <BottomWordContainerStyled>
         {bottomWordTrail.map((props, index) => (
-          <WordStyled style={props} key={index}>
+          <WordStyled
+            style={props}
+            key={`${currentItemIndex}-bottom-${index}-${data[currentItemIndex].bottomWord[index]}`}
+          >
             {data[currentItemIndex].bottomWord[index]}
           </WordStyled>
         ))}
