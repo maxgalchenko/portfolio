@@ -42,17 +42,17 @@ describe('Title', () => {
     expect(h1).toBeInTheDocument();
   });
 
-  it('should render initial text (Software Engineer)', () => {
+  it('should render initial text (Staff Engineer)', () => {
     const { container } = render(<Title />);
-    expect(container.textContent).toContain('Software');
+    expect(container.textContent).toContain('Staff');
     expect(container.textContent).toContain('Engineer');
   });
 
   it('should render text character by character', () => {
     const { container } = render(<Title />);
     const spans = container.querySelectorAll('span');
-    // Software (8) + Engineer (8) = 16 characters minimum
-    expect(spans.length).toBeGreaterThanOrEqual(16);
+    // Staff (5) + Engineer (8) = 13 characters minimum
+    expect(spans.length).toBeGreaterThanOrEqual(13);
   });
 
   it('should set up interval for changing text', () => {
