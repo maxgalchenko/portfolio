@@ -44,28 +44,28 @@ const SpaceStyled = styled.span`
 
 const data = [
   {
-    topWord: 'Software',
+    topWord: 'Staff',
     bottomWord: 'Engineer',
   },
   {
-    topWord: 'Front-end',
-    bottomWord: 'Developer',
+    topWord: 'Frontend',
+    bottomWord: 'Architect',
   },
   {
-    topWord: 'Web',
-    bottomWord: 'Programmer',
+    topWord: 'React',
+    bottomWord: 'Specialist',
   },
   {
-    topWord: 'React.Js',
-    bottomWord: 'hacktivist',
+    topWord: 'Design System',
+    bottomWord: 'Leader',
   },
   {
-    topWord: 'JS/TS',
-    bottomWord: 'cracker',
+    topWord: 'Performance',
+    bottomWord: 'Expert',
   },
   {
-    topWord: 'IT',
-    bottomWord: 'geek',
+    topWord: 'TypeScript',
+    bottomWord: 'Engineer',
   },
 ];
 
